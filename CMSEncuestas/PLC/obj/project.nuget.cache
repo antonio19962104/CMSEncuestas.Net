@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qwkjHgXjugw69oL77779rEJcwX3zKoKIQ9ns48UM5TDANLwR2+G4YzS4ywosU9X5exSN6KMH2Cj3FU9YiX/VMg==",
+  "success": true,
+  "projectFilePath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jose antonio\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
