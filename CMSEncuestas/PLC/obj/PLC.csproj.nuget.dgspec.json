@@ -4,6 +4,16 @@
     "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {}
   },
   "projects": {
+    "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj",
+        "projectName": "ML",
+        "projectPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -30,7 +40,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+                "projectPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

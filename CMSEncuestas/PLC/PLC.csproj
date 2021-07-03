@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Api\" />
+    <Folder Include="Controllers\Web\" />
+    <Folder Include="Modulos\Generales\" />
+    <Folder Include="Modulos\Seguridad\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BL">
+      <HintPath>..\BL\bin\Debug\BL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

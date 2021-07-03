@@ -1,0 +1,6 @@
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\BL.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\BL.pdb
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.pdb

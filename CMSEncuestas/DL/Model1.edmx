@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CmsEncuestasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdministrador" />
+          </Key>
+          <Property Name="IdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="100" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="12" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Administrador_WorkSpace">
+          <Key>
+            <PropertyRef Name="IdAdministrador_WorkSpace" />
+          </Key>
+          <Property Name="IdAdministrador_WorkSpace" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAdministrador" Type="int" />
+          <Property Name="IdWorkSpace" Type="int" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="BaseDeDatos">
+          <Key>
+            <PropertyRef Name="IdBaseDeDatos" />
+          </Key>
+          <Property Name="IdBaseDeDatos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEstatus" Type="int" />
+          <Property Name="IdAdministrador" Type="int" />
+        </EntityType>
+        <EntityType Name="Encuesta">
+          <Key>
+            <PropertyRef Name="IdEncuesta" />
+          </Key>
+          <Property Name="IdEncuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="FechaFin" Type="datetime" />
+          <Property Name="Instrucciones" Type="varchar" MaxLength="500" />
+          <Property Name="Agradecimiento" Type="varchar" MaxLength="500" />
+          <Property Name="IdEstatus" Type="int" />
+          <Property Name="IdAdministrador" Type="int" />
+          <Property Name="IdTipoEncuesta" Type="int" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="IdEstatus" />
+          </Key>
+          <Property Name="IdEstatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EstatusEncuesta">
+          <Key>
+            <PropertyRef Name="IdEstatusEncuesta" />
+          </Key>
+          <Property Name="IdEstatusEncuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstatusEncuesta" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Preguntas">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pregunta" Type="varchar" MaxLength="200" />
+          <Property Name="IdEncuesta" Type="int" />
+          <Property Name="IdEstatus" Type="int" />
+          <Property Name="IdTipoControl" Type="int" />
+        </EntityType>
+        <EntityType Name="Respuestas">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Respuesta" Type="varchar" MaxLength="500" />
+          <Property Name="IdPregunta" Type="int" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoControl">
+          <Key>
+            <PropertyRef Name="IdTipoControl" />
+          </Key>
+          <Property Name="IdTipoControl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TipoEncuesta">
+          <Key>
+            <PropertyRef Name="IdTipoEncuesta" />
+          </Key>
+          <Property Name="IdTipoEncuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="100" />
+          <Property Name="FechaNacimiento" Type="date" />
+          <Property Name="FechaIngreso" Type="date" />
+          <Property Name="Sexo" Type="varchar" MaxLength="50" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario_EstatusEncuesta">
+          <Key>
+            <PropertyRef Name="IdUsuario_EstatusEncuesta" />
+          </Key>
+          <Property Name="IdUsuario_EstatusEncuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="IdEncuesta" Type="int" />
+          <Property Name="IdEstatusEncuesta" Type="int" />
+        </EntityType>
+        <EntityType Name="UsuarioRespuestas">
+          <Key>
+            <PropertyRef Name="IdusuarioRespuestas" />
+          </Key>
+          <Property Name="IdusuarioRespuestas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEncuesta" Type="int" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="IdPregunta" Type="int" />
+          <Property Name="IdRespuesta" Type="int" />
+        </EntityType>
+        <EntityType Name="WorkSpace">
+          <Key>
+            <PropertyRef Name="IdWorkSpace" />
+          </Key>
+          <Property Name="IdWorkSpace" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <Association Name="FK_Administrador_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="IdWorkSpace" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdWorkSpace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseDeDatos_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="BaseDeDatos" Type="Self.BaseDeDatos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="BaseDeDatos">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseDeDatos_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="BaseDeDatos" Type="Self.BaseDeDatos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="BaseDeDatos">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="WorkSpace">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_TipoEncuesta">
+          <End Role="TipoEncuesta" Type="Self.TipoEncuesta" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEncuesta">
+              <PropertyRef Name="IdTipoEncuesta" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdTipoEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_TipoControl">
+          <End Role="TipoControl" Type="Self.TipoControl" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoControl">
+              <PropertyRef Name="IdTipoControl" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdTipoControl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Pregunta">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_EstatusEncuesta">
+          <End Role="EstatusEncuesta" Type="Self.EstatusEncuesta" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstatusEncuesta">
+              <PropertyRef Name="IdEstatusEncuesta" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdEstatusEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Pregunta">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Respuesta">
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respuestas">
+              <PropertyRef Name="IdRespuesta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CmsEncuestasModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Administrador_WorkSpace" EntityType="Self.Administrador_WorkSpace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaseDeDatos" EntityType="Self.BaseDeDatos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Encuesta" EntityType="Self.Encuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstatusEncuesta" EntityType="Self.EstatusEncuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preguntas" EntityType="Self.Preguntas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Respuestas" EntityType="Self.Respuestas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoControl" EntityType="Self.TipoControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoEncuesta" EntityType="Self.TipoEncuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario_EstatusEncuesta" EntityType="Self.Usuario_EstatusEncuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioRespuestas" EntityType="Self.UsuarioRespuestas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkSpace" EntityType="Self.WorkSpace" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Administrador_Estatus" Association="Self.FK_Administrador_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_Administrador" Association="Self.FK_Administrador_WorkSpace_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_Estatus" Association="Self.FK_Administrador_WorkSpace_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_WorkSpace" Association="Self.FK_Administrador_WorkSpace_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseDeDatos_Administrador" Association="Self.FK_BaseDeDatos_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="BaseDeDatos" EntitySet="BaseDeDatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseDeDatos_Estatus" Association="Self.FK_BaseDeDatos_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="BaseDeDatos" EntitySet="BaseDeDatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Estatus" Association="Self.FK_Empresa_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_Administrador" Association="Self.FK_Encuesta_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_Estatus" Association="Self.FK_Encuesta_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_TipoEncuesta" Association="Self.FK_Encuesta_TipoEncuesta">
+            <End Role="TipoEncuesta" EntitySet="TipoEncuesta" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Encuesta" Association="Self.FK_Preguntas_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Estatus" Association="Self.FK_Preguntas_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_TipoControl" Association="Self.FK_Preguntas_TipoControl">
+            <End Role="TipoControl" EntitySet="TipoControl" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Estatus" Association="Self.FK_Respuestas_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Pregunta" Association="Self.FK_Respuestas_Pregunta">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Estatus" Association="Self.FK_Usuario_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_Encuesta" Association="Self.FK_Usuario_EstatusEncuesta_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_EstatusEncuesta" Association="Self.FK_Usuario_EstatusEncuesta_EstatusEncuesta">
+            <End Role="EstatusEncuesta" EntitySet="EstatusEncuesta" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_Usuario" Association="Self.FK_Usuario_EstatusEncuesta_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Encuesta" Association="Self.FK_UsuarioRespuestas_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Pregunta" Association="Self.FK_UsuarioRespuestas_Pregunta">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Respuesta" Association="Self.FK_UsuarioRespuestas_Respuesta">
+            <End Role="Respuestas" EntitySet="Respuestas" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Usuario" Association="Self.FK_UsuarioRespuestas_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CmsEncuestasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdministrador" />
+          </Key>
+          <Property Name="IdAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Administrador_Estatus" FromRole="Administrador" ToRole="Estatus" />
+          <NavigationProperty Name="Administrador_WorkSpace" Relationship="Self.FK_Administrador_WorkSpace_Administrador" FromRole="Administrador" ToRole="Administrador_WorkSpace" />
+          <NavigationProperty Name="BaseDeDatos" Relationship="Self.FK_BaseDeDatos_Administrador" FromRole="Administrador" ToRole="BaseDeDatos" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_Encuesta_Administrador" FromRole="Administrador" ToRole="Encuesta" />
+        </EntityType>
+        <EntityType Name="Administrador_WorkSpace">
+          <Key>
+            <PropertyRef Name="IdAdministrador_WorkSpace" />
+          </Key>
+          <Property Name="IdAdministrador_WorkSpace" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAdministrador" Type="Int32" />
+          <Property Name="IdWorkSpace" Type="Int32" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Administrador_WorkSpace_Administrador" FromRole="Administrador_WorkSpace" ToRole="Administrador" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Administrador_WorkSpace_Estatus" FromRole="Administrador_WorkSpace" ToRole="Estatus" />
+          <NavigationProperty Name="WorkSpace" Relationship="Self.FK_Administrador_WorkSpace_WorkSpace" FromRole="Administrador_WorkSpace" ToRole="WorkSpace" />
+        </EntityType>
+        <EntityType Name="BaseDeDatos">
+          <Key>
+            <PropertyRef Name="IdBaseDeDatos" />
+          </Key>
+          <Property Name="IdBaseDeDatos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <Property Name="IdAdministrador" Type="Int32" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_BaseDeDatos_Administrador" FromRole="BaseDeDatos" ToRole="Administrador" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_BaseDeDatos_Estatus" FromRole="BaseDeDatos" ToRole="Estatus" />
+        </EntityType>
+        <EntityType Name="Encuesta">
+          <Key>
+            <PropertyRef Name="IdEncuesta" />
+          </Key>
+          <Property Name="IdEncuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Precision="3" />
+          <Property Name="Instrucciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Agradecimiento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <Property Name="IdAdministrador" Type="Int32" />
+          <Property Name="IdTipoEncuesta" Type="Int32" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Encuesta_Administrador" FromRole="Encuesta" ToRole="Administrador" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Encuesta_Estatus" FromRole="Encuesta" ToRole="Estatus" />
+          <NavigationProperty Name="TipoEncuesta" Relationship="Self.FK_Encuesta_TipoEncuesta" FromRole="Encuesta" ToRole="TipoEncuesta" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Preguntas_Encuesta" FromRole="Encuesta" ToRole="Preguntas" />
+          <NavigationProperty Name="Usuario_EstatusEncuesta" Relationship="Self.FK_Usuario_EstatusEncuesta_Encuesta" FromRole="Encuesta" ToRole="Usuario_EstatusEncuesta" />
+          <NavigationProperty Name="UsuarioRespuestas" Relationship="Self.FK_UsuarioRespuestas_Encuesta" FromRole="Encuesta" ToRole="UsuarioRespuestas" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="IdEstatus" />
+          </Key>
+          <Property Name="IdEstatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estatus1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Administrador_Estatus" FromRole="Estatus" ToRole="Administrador" />
+          <NavigationProperty Name="Administrador_WorkSpace" Relationship="Self.FK_Administrador_WorkSpace_Estatus" FromRole="Estatus" ToRole="Administrador_WorkSpace" />
+          <NavigationProperty Name="BaseDeDatos" Relationship="Self.FK_BaseDeDatos_Estatus" FromRole="Estatus" ToRole="BaseDeDatos" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_Encuesta_Estatus" FromRole="Estatus" ToRole="Encuesta" />
+          <NavigationProperty Name="WorkSpace" Relationship="Self.FK_Empresa_Estatus" FromRole="Estatus" ToRole="WorkSpace" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Preguntas_Estatus" FromRole="Estatus" ToRole="Preguntas" />
+          <NavigationProperty Name="Respuestas" Relationship="Self.FK_Respuestas_Estatus" FromRole="Estatus" ToRole="Respuestas" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Estatus" FromRole="Estatus" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="EstatusEncuesta">
+          <Key>
+            <PropertyRef Name="IdEstatusEncuesta" />
+          </Key>
+          <Property Name="IdEstatusEncuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstatusEncuesta1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuario_EstatusEncuesta" Relationship="Self.FK_Usuario_EstatusEncuesta_EstatusEncuesta" FromRole="EstatusEncuesta" ToRole="Usuario_EstatusEncuesta" />
+        </EntityType>
+        <EntityType Name="Preguntas">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pregunta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IdEncuesta" Type="Int32" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <Property Name="IdTipoControl" Type="Int32" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_Preguntas_Encuesta" FromRole="Preguntas" ToRole="Encuesta" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Preguntas_Estatus" FromRole="Preguntas" ToRole="Estatus" />
+          <NavigationProperty Name="TipoControl" Relationship="Self.FK_Preguntas_TipoControl" FromRole="Preguntas" ToRole="TipoControl" />
+          <NavigationProperty Name="Respuestas" Relationship="Self.FK_Respuestas_Pregunta" FromRole="Preguntas" ToRole="Respuestas" />
+          <NavigationProperty Name="UsuarioRespuestas" Relationship="Self.FK_UsuarioRespuestas_Pregunta" FromRole="Preguntas" ToRole="UsuarioRespuestas" />
+        </EntityType>
+        <EntityType Name="Respuestas">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Respuesta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdPregunta" Type="Int32" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Respuestas_Estatus" FromRole="Respuestas" ToRole="Estatus" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Respuestas_Pregunta" FromRole="Respuestas" ToRole="Preguntas" />
+          <NavigationProperty Name="UsuarioRespuestas" Relationship="Self.FK_UsuarioRespuestas_Respuesta" FromRole="Respuestas" ToRole="UsuarioRespuestas" />
+        </EntityType>
+        <EntityType Name="TipoControl">
+          <Key>
+            <PropertyRef Name="IdTipoControl" />
+          </Key>
+          <Property Name="IdTipoControl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_Preguntas_TipoControl" FromRole="TipoControl" ToRole="Preguntas" />
+        </EntityType>
+        <EntityType Name="TipoEncuesta">
+          <Key>
+            <PropertyRef Name="IdTipoEncuesta" />
+          </Key>
+          <Property Name="IdTipoEncuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_Encuesta_TipoEncuesta" FromRole="TipoEncuesta" ToRole="Encuesta" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+          <Property Name="Sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Usuario_Estatus" FromRole="Usuario" ToRole="Estatus" />
+          <NavigationProperty Name="Usuario_EstatusEncuesta" Relationship="Self.FK_Usuario_EstatusEncuesta_Usuario" FromRole="Usuario" ToRole="Usuario_EstatusEncuesta" />
+          <NavigationProperty Name="UsuarioRespuestas" Relationship="Self.FK_UsuarioRespuestas_Usuario" FromRole="Usuario" ToRole="UsuarioRespuestas" />
+        </EntityType>
+        <EntityType Name="Usuario_EstatusEncuesta">
+          <Key>
+            <PropertyRef Name="IdUsuario_EstatusEncuesta" />
+          </Key>
+          <Property Name="IdUsuario_EstatusEncuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="IdEncuesta" Type="Int32" />
+          <Property Name="IdEstatusEncuesta" Type="Int32" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_Usuario_EstatusEncuesta_Encuesta" FromRole="Usuario_EstatusEncuesta" ToRole="Encuesta" />
+          <NavigationProperty Name="EstatusEncuesta" Relationship="Self.FK_Usuario_EstatusEncuesta_EstatusEncuesta" FromRole="Usuario_EstatusEncuesta" ToRole="EstatusEncuesta" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_EstatusEncuesta_Usuario" FromRole="Usuario_EstatusEncuesta" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="UsuarioRespuestas">
+          <Key>
+            <PropertyRef Name="IdusuarioRespuestas" />
+          </Key>
+          <Property Name="IdusuarioRespuestas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEncuesta" Type="Int32" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="IdPregunta" Type="Int32" />
+          <Property Name="IdRespuesta" Type="Int32" />
+          <NavigationProperty Name="Encuesta" Relationship="Self.FK_UsuarioRespuestas_Encuesta" FromRole="UsuarioRespuestas" ToRole="Encuesta" />
+          <NavigationProperty Name="Preguntas" Relationship="Self.FK_UsuarioRespuestas_Pregunta" FromRole="UsuarioRespuestas" ToRole="Preguntas" />
+          <NavigationProperty Name="Respuestas" Relationship="Self.FK_UsuarioRespuestas_Respuesta" FromRole="UsuarioRespuestas" ToRole="Respuestas" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_UsuarioRespuestas_Usuario" FromRole="UsuarioRespuestas" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="WorkSpace">
+          <Key>
+            <PropertyRef Name="IdWorkSpace" />
+          </Key>
+          <Property Name="IdWorkSpace" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Administrador_WorkSpace" Relationship="Self.FK_Administrador_WorkSpace_WorkSpace" FromRole="WorkSpace" ToRole="Administrador_WorkSpace" />
+          <NavigationProperty Name="Estatus" Relationship="Self.FK_Empresa_Estatus" FromRole="WorkSpace" ToRole="Estatus" />
+        </EntityType>
+        <Association Name="FK_Administrador_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseDeDatos_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="BaseDeDatos" Type="Self.BaseDeDatos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="BaseDeDatos">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_WorkSpace_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="0..1" />
+          <End Role="Administrador_WorkSpace" Type="Self.Administrador_WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="IdWorkSpace" />
+            </Principal>
+            <Dependent Role="Administrador_WorkSpace">
+              <PropertyRef Name="IdWorkSpace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseDeDatos_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="BaseDeDatos" Type="Self.BaseDeDatos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="BaseDeDatos">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Encuesta_TipoEncuesta">
+          <End Role="TipoEncuesta" Type="Self.TipoEncuesta" Multiplicity="0..1" />
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEncuesta">
+              <PropertyRef Name="IdTipoEncuesta" />
+            </Principal>
+            <Dependent Role="Encuesta">
+              <PropertyRef Name="IdTipoEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Encuesta">
+          <End Role="Encuesta" Type="Self.Encuesta" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encuesta">
+              <PropertyRef Name="IdEncuesta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="WorkSpace">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_EstatusEncuesta">
+          <End Role="EstatusEncuesta" Type="Self.EstatusEncuesta" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstatusEncuesta">
+              <PropertyRef Name="IdEstatusEncuesta" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdEstatusEncuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Preguntas_TipoControl">
+          <End Role="TipoControl" Type="Self.TipoControl" Multiplicity="0..1" />
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoControl">
+              <PropertyRef Name="IdTipoControl" />
+            </Principal>
+            <Dependent Role="Preguntas">
+              <PropertyRef Name="IdTipoControl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Respuestas_Pregunta">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="Respuestas">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Pregunta">
+          <End Role="Preguntas" Type="Self.Preguntas" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Preguntas">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Respuesta">
+          <End Role="Respuestas" Type="Self.Respuestas" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respuestas">
+              <PropertyRef Name="IdRespuesta" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdRespuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_EstatusEncuesta_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Usuario_EstatusEncuesta" Type="Self.Usuario_EstatusEncuesta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Usuario_EstatusEncuesta">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioRespuestas_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="UsuarioRespuestas" Type="Self.UsuarioRespuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioRespuestas">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CmsEncuestasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+          <EntitySet Name="Administrador_WorkSpace" EntityType="Self.Administrador_WorkSpace" />
+          <EntitySet Name="BaseDeDatos" EntityType="Self.BaseDeDatos" />
+          <EntitySet Name="Encuesta" EntityType="Self.Encuesta" />
+          <EntitySet Name="Estatus" EntityType="Self.Estatus" />
+          <EntitySet Name="EstatusEncuesta" EntityType="Self.EstatusEncuesta" />
+          <EntitySet Name="Preguntas" EntityType="Self.Preguntas" />
+          <EntitySet Name="Respuestas" EntityType="Self.Respuestas" />
+          <EntitySet Name="TipoControl" EntityType="Self.TipoControl" />
+          <EntitySet Name="TipoEncuesta" EntityType="Self.TipoEncuesta" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="Usuario_EstatusEncuesta" EntityType="Self.Usuario_EstatusEncuesta" />
+          <EntitySet Name="UsuarioRespuestas" EntityType="Self.UsuarioRespuestas" />
+          <EntitySet Name="WorkSpace" EntityType="Self.WorkSpace" />
+          <AssociationSet Name="FK_Administrador_Estatus" Association="Self.FK_Administrador_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_Administrador" Association="Self.FK_Administrador_WorkSpace_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseDeDatos_Administrador" Association="Self.FK_BaseDeDatos_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="BaseDeDatos" EntitySet="BaseDeDatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_Administrador" Association="Self.FK_Encuesta_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_Estatus" Association="Self.FK_Administrador_WorkSpace_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_WorkSpace_WorkSpace" Association="Self.FK_Administrador_WorkSpace_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Administrador_WorkSpace" EntitySet="Administrador_WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseDeDatos_Estatus" Association="Self.FK_BaseDeDatos_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="BaseDeDatos" EntitySet="BaseDeDatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_Estatus" Association="Self.FK_Encuesta_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Encuesta_TipoEncuesta" Association="Self.FK_Encuesta_TipoEncuesta">
+            <End Role="TipoEncuesta" EntitySet="TipoEncuesta" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Encuesta" Association="Self.FK_Preguntas_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_Encuesta" Association="Self.FK_Usuario_EstatusEncuesta_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Encuesta" Association="Self.FK_UsuarioRespuestas_Encuesta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Estatus" Association="Self.FK_Empresa_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_Estatus" Association="Self.FK_Preguntas_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Estatus" Association="Self.FK_Respuestas_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Estatus" Association="Self.FK_Usuario_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_EstatusEncuesta" Association="Self.FK_Usuario_EstatusEncuesta_EstatusEncuesta">
+            <End Role="EstatusEncuesta" EntitySet="EstatusEncuesta" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Preguntas_TipoControl" Association="Self.FK_Preguntas_TipoControl">
+            <End Role="TipoControl" EntitySet="TipoControl" />
+            <End Role="Preguntas" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Respuestas_Pregunta" Association="Self.FK_Respuestas_Pregunta">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="Respuestas" EntitySet="Respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Pregunta" Association="Self.FK_UsuarioRespuestas_Pregunta">
+            <End Role="Preguntas" EntitySet="Preguntas" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Respuesta" Association="Self.FK_UsuarioRespuestas_Respuesta">
+            <End Role="Respuestas" EntitySet="Respuestas" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_EstatusEncuesta_Usuario" Association="Self.FK_Usuario_EstatusEncuesta_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario_EstatusEncuesta" EntitySet="Usuario_EstatusEncuesta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioRespuestas_Usuario" Association="Self.FK_UsuarioRespuestas_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioRespuestas" EntitySet="UsuarioRespuestas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CmsEncuestasModelStoreContainer" CdmEntityContainer="CmsEncuestasEntities">
+          <EntitySetMapping Name="Administrador">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administrador_WorkSpace">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Administrador_WorkSpace">
+              <MappingFragment StoreEntitySet="Administrador_WorkSpace">
+                <ScalarProperty Name="IdAdministrador_WorkSpace" ColumnName="IdAdministrador_WorkSpace" />
+                <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+                <ScalarProperty Name="IdWorkSpace" ColumnName="IdWorkSpace" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaseDeDatos">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.BaseDeDatos">
+              <MappingFragment StoreEntitySet="BaseDeDatos">
+                <ScalarProperty Name="IdBaseDeDatos" ColumnName="IdBaseDeDatos" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+                <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Encuesta">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Encuesta">
+              <MappingFragment StoreEntitySet="Encuesta">
+                <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Instrucciones" ColumnName="Instrucciones" />
+                <ScalarProperty Name="Agradecimiento" ColumnName="Agradecimiento" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+                <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+                <ScalarProperty Name="IdTipoEncuesta" ColumnName="IdTipoEncuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estatus">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Estatus">
+              <MappingFragment StoreEntitySet="Estatus">
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+                <ScalarProperty Name="Estatus1" ColumnName="Estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstatusEncuesta">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.EstatusEncuesta">
+              <MappingFragment StoreEntitySet="EstatusEncuesta">
+                <ScalarProperty Name="IdEstatusEncuesta" ColumnName="IdEstatusEncuesta" />
+                <ScalarProperty Name="EstatusEncuesta1" ColumnName="EstatusEncuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preguntas">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Preguntas">
+              <MappingFragment StoreEntitySet="Preguntas">
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+                <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Respuestas">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Respuestas">
+              <MappingFragment StoreEntitySet="Respuestas">
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoControl">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.TipoControl">
+              <MappingFragment StoreEntitySet="TipoControl">
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoEncuesta">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.TipoEncuesta">
+              <MappingFragment StoreEntitySet="TipoEncuesta">
+                <ScalarProperty Name="IdTipoEncuesta" ColumnName="IdTipoEncuesta" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario_EstatusEncuesta">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.Usuario_EstatusEncuesta">
+              <MappingFragment StoreEntitySet="Usuario_EstatusEncuesta">
+                <ScalarProperty Name="IdUsuario_EstatusEncuesta" ColumnName="IdUsuario_EstatusEncuesta" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+                <ScalarProperty Name="IdEstatusEncuesta" ColumnName="IdEstatusEncuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioRespuestas">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.UsuarioRespuestas">
+              <MappingFragment StoreEntitySet="UsuarioRespuestas">
+                <ScalarProperty Name="IdusuarioRespuestas" ColumnName="IdusuarioRespuestas" />
+                <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkSpace">
+            <EntityTypeMapping TypeName="CmsEncuestasModel.WorkSpace">
+              <MappingFragment StoreEntitySet="WorkSpace">
+                <ScalarProperty Name="IdWorkSpace" ColumnName="IdWorkSpace" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

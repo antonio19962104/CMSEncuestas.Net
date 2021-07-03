@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ddc381c11429404ba97a43aa24796f50" Name="Diagram1">
+        <EntityTypeShape EntityType="CmsEncuestasModel.Administrador" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Administrador_WorkSpace" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.BaseDeDatos" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Encuesta" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Estatus" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.EstatusEncuesta" Width="1.5" PointX="11.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Preguntas" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Respuestas" Width="1.5" PointX="12.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.TipoControl" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.TipoEncuesta" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Usuario" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.Usuario_EstatusEncuesta" Width="1.5" PointX="13.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.UsuarioRespuestas" Width="1.5" PointX="16" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CmsEncuestasModel.WorkSpace" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Administrador_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Administrador_WorkSpace_Administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_BaseDeDatos_Administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Encuesta_Administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Administrador_WorkSpace_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Administrador_WorkSpace_WorkSpace" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_BaseDeDatos_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Encuesta_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Encuesta_TipoEncuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Preguntas_Encuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Usuario_EstatusEncuesta_Encuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_UsuarioRespuestas_Encuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Empresa_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Preguntas_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Respuestas_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Usuario_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Usuario_EstatusEncuesta_EstatusEncuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Preguntas_TipoControl" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Respuestas_Pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_UsuarioRespuestas_Pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_UsuarioRespuestas_Respuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_Usuario_EstatusEncuesta_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CmsEncuestasModel.FK_UsuarioRespuestas_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
