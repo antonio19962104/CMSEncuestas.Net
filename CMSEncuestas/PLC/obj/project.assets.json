@@ -4,11 +4,24 @@
     ".NETCoreApp,Version=v3.1": {
       "BL/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "DL": "1.0.0",
+          "ML": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/BL.dll": {}
         },
         "runtime": {
           "bin/placeholder/BL.dll": {}
+        }
+      },
+      "DL/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DL.dll": {}
         }
       },
       "ML/1.0.0": {
@@ -27,6 +40,11 @@
       "type": "project",
       "path": "../BL/BL.csproj",
       "msbuildProject": "../BL/BL.csproj"
+    },
+    "DL/1.0.0": {
+      "type": "project",
+      "path": "../DL/DL.csproj",
+      "msbuildProject": "../DL/DL.csproj"
     },
     "ML/1.0.0": {
       "type": "project",

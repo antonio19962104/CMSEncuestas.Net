@@ -6,9 +6,16 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Api\" />
-    <Folder Include="Controllers\Web\" />
+    <Folder Include="Controllers\Api\" />
+    <Folder Include="Modulos\Generales\" />
     <Folder Include="Modulos\Generales\" />
     <Folder Include="Modulos\Seguridad\" />
+    <Folder Include="Modulos\Seguridad\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+    <ProjectReference Include="..\ML\ML.csproj" />
   </ItemGroup>
 
   <ItemGroup>

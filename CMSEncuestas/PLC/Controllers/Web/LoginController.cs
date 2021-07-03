@@ -19,7 +19,7 @@ namespace PLC.Controllers.Web
         public ActionResult Login(ML.Administrador administrador)
         {
             var _token = Modulos.Login.Login.Autenticar(administrador);
-            return View("Home/?token=" + _token);
+            return View("Home/?_token=" + _token);
         }
     }
 }

@@ -8,7 +8,29 @@
       "restore": {
         "projectUniqueName": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj"
+        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\CMSEncuestas.Net\\CMSEncuestas\\DL\\DL.csproj": {
+                "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\DL\\DL.csproj"
+              },
+              "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+                "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\CMSEncuestas.Net\\CMSEncuestas\\DL\\DL.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\CMSEncuestas.Net\\CMSEncuestas\\DL\\DL.csproj",
+        "projectName": "DL",
+        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\DL\\DL.csproj"
       },
       "frameworks": {
         "net472": {}
