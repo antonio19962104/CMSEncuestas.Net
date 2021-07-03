@@ -1,34 +1,47 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {}
+    "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {}
   },
   "projects": {
-    "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+    "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj",
-        "projectName": "ML",
-        "projectPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+        "projectUniqueName": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj",
+        "projectName": "BL",
+        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {
+    "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj",
+        "projectName": "ML",
+        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
+        "projectUniqueName": "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
         "projectName": "PLC",
-        "projectPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
-        "packagesPath": "C:\\Users\\jose antonio\\.nuget\\packages\\",
-        "outputPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\obj\\",
+        "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
+        "packagesPath": "C:\\Users\\jamurillo\\.nuget\\packages\\",
+        "outputPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jose antonio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jamurillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -41,8 +54,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
-                "projectPath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
+              "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj": {
+                "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\BL\\BL.csproj"
+              },
+              "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj": {
+                "projectPath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\ML\\ML.csproj"
               }
             }
           }
@@ -66,12 +82,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.13, 3.1.13]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -80,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

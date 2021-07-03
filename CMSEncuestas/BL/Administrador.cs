@@ -15,16 +15,16 @@ namespace BL
             {
                 using (DL.CmsEncuestasEntities context = new DL.CmsEncuestasEntities())
                 {
-                    var existe = context.Administrador.Where(o => o.Username == aAdministrador.Username && o.Password == aAdministrador.Password).FirstOrDefault();
+                    var existe = context.Administrador.Where(o => o.Username == aAdministrador.Username && o.Password == aAdministrador.Password && o.IdEstatus == 1).FirstOrDefault();
                     if (existe == null)
                     {
                         result.Correct = true;
-                        result.Object = "not found";
+                        result.Object = existe;
                     }
                     else
                     {
                         result.Correct = true;
-                        result.Object = existe;
+                        result.Object = BL.MappingConfigurations.MappingAdministrador(existe);
                     }
                 }
             }

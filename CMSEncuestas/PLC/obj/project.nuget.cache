@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tMgQBFY7X6sQQaQ69RnECb7amvoJaJ4TDLs7JN5BV9UvIiNAKhLsTQu+qK6DGR7CxGeM4rC9U1S1jP514gOIuA==",
+  "dgSpecHash": "YJWffKKQEZwSQwPMD53mFJ/sd3kaiRYurE38hpXbRAIiThBxVyMK0aXr1btQo0MwH2mekJxUQ63a53S8mGRjcg==",
   "success": true,
-  "projectFilePath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\jose antonio\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\PLC\\PLC.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
