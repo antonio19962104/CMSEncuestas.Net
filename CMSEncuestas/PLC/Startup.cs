@@ -15,8 +15,6 @@ namespace PLC
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Controllers.Web.LoginController s = new Controllers.Web.LoginController();
-            s.Login();
         }
 
         public IConfiguration Configuration { get; }
@@ -48,7 +46,7 @@ namespace PLC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }

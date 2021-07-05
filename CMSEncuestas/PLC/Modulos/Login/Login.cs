@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,6 +24,7 @@ namespace PLC.Modulos.Login
             }
             catch (Exception aE)
             {
+                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace());
                 return "error";
             }
         }

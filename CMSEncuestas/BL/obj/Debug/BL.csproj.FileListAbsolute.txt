@@ -4,3 +4,22 @@ C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csprojAssembly
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.dll
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\BL.dll.config
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\BL.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\BL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\DL.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\EntityFramework.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\ML.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\DL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\DL.dll.config
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\ML.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\EntityFramework.xml
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+C:\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.csproj.CopyComplete
+C:\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\obj\Debug\BL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\NLog.dll
+C:\CMSEncuestas.Net\CMSEncuestas\BL\bin\Debug\NLog.xml

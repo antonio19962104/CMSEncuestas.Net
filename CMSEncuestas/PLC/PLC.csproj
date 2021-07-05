@@ -11,6 +11,11 @@
     <Folder Include="Modulos\Generales\" />
     <Folder Include="Modulos\Seguridad\" />
     <Folder Include="Modulos\Seguridad\" />
+    <Folder Include="wwwroot\lib\Angular\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>

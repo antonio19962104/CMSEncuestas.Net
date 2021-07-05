@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace BL
             }
             catch (Exception aE)
             {
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
                 return new ML.Administrador();
             }
         }
@@ -42,6 +44,7 @@ namespace BL
             }
             catch (Exception aE)
             {
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
                 return new ML.WorkSpace();
             }
         }

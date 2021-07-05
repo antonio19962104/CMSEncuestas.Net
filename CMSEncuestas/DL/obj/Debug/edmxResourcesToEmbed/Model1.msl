@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CmsEncuestasModelStoreContainer" CdmEntityContainer="CmsEncuestasEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrador_WorkSpace">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Administrador_WorkSpace">
+        <MappingFragment StoreEntitySet="Administrador_WorkSpace">
+          <ScalarProperty Name="IdAdministrador_WorkSpace" ColumnName="IdAdministrador_WorkSpace" />
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="IdWorkSpace" ColumnName="IdWorkSpace" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseDeDatos">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.BaseDeDatos">
+        <MappingFragment StoreEntitySet="BaseDeDatos">
+          <ScalarProperty Name="IdBaseDeDatos" ColumnName="IdBaseDeDatos" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encuesta">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Encuesta">
+        <MappingFragment StoreEntitySet="Encuesta">
+          <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Instrucciones" ColumnName="Instrucciones" />
+          <ScalarProperty Name="Agradecimiento" ColumnName="Agradecimiento" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="IdTipoEncuesta" ColumnName="IdTipoEncuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Estatus">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Estatus1" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstatusEncuesta">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.EstatusEncuesta">
+        <MappingFragment StoreEntitySet="EstatusEncuesta">
+          <ScalarProperty Name="IdEstatusEncuesta" ColumnName="IdEstatusEncuesta" />
+          <ScalarProperty Name="EstatusEncuesta1" ColumnName="EstatusEncuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preguntas">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Preguntas">
+        <MappingFragment StoreEntitySet="Preguntas">
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+          <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Respuestas">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Respuestas">
+        <MappingFragment StoreEntitySet="Respuestas">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoControl">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.TipoControl">
+        <MappingFragment StoreEntitySet="TipoControl">
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEncuesta">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.TipoEncuesta">
+        <MappingFragment StoreEntitySet="TipoEncuesta">
+          <ScalarProperty Name="IdTipoEncuesta" ColumnName="IdTipoEncuesta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario_EstatusEncuesta">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.Usuario_EstatusEncuesta">
+        <MappingFragment StoreEntitySet="Usuario_EstatusEncuesta">
+          <ScalarProperty Name="IdUsuario_EstatusEncuesta" ColumnName="IdUsuario_EstatusEncuesta" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+          <ScalarProperty Name="IdEstatusEncuesta" ColumnName="IdEstatusEncuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioRespuestas">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.UsuarioRespuestas">
+        <MappingFragment StoreEntitySet="UsuarioRespuestas">
+          <ScalarProperty Name="IdusuarioRespuestas" ColumnName="IdusuarioRespuestas" />
+          <ScalarProperty Name="IdEncuesta" ColumnName="IdEncuesta" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkSpace">
+      <EntityTypeMapping TypeName="CmsEncuestasModel.WorkSpace">
+        <MappingFragment StoreEntitySet="WorkSpace">
+          <ScalarProperty Name="IdWorkSpace" ColumnName="IdWorkSpace" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
