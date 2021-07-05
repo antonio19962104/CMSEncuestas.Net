@@ -7,8 +7,6 @@
     var _token = Context.Request.Query["_token"].ToString();
 }
 
-<h1>Home</h1>
-
 @{
     if (_token.Equals("404"))
         @Html.Partial("~/Views/Login/AdminNotFound.cshtml")
@@ -16,9 +14,6 @@
         @Html.Partial("~/Views/Login/AdminNotFound.cshtml")
     if (string.IsNullOrEmpty(_token))
         @Html.Partial("~/Views/Login/SessionInvalida.cshtml")
-    else
-    {
-        <h3>Hello</h3>
-        <p>Welcome to Dashboard render partial view</p>
-    }
+    else if (_token.Length > 20)
+        @Html.Partial("~/Views/Home/DashBoard.cshtml")
 }

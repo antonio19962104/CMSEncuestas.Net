@@ -27,6 +27,9 @@
     <Reference Include="BL">
       <HintPath>..\BL\bin\Debug\BL.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

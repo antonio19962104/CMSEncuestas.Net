@@ -162,3 +162,4 @@ C:\CMSEncuestas.Net\CMSEncuestas\PLC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Ho
 C:\CMSEncuestas.Net\CMSEncuestas\PLC\obj\Debug\netcoreapp3.1\Razor\Views\Login\AdminNotFound.cshtml.g.cs
 C:\CMSEncuestas.Net\CMSEncuestas\PLC\bin\Debug\netcoreapp3.1\NLog.dll
 C:\CMSEncuestas.Net\CMSEncuestas\PLC\bin\Debug\netcoreapp3.1\NLog.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PLC\obj\Debug\netcoreapp3.1\Razor\Views\Home\DashBoard.cshtml.g.cs
