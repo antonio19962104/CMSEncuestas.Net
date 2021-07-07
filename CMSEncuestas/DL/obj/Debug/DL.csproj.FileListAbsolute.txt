@@ -16,3 +16,10 @@ C:\CMSEncuestas.Net\CMSEncuestas\DL\obj\Debug\DL.csproj.CoreCompileInputs.cache
 C:\CMSEncuestas.Net\CMSEncuestas\DL\obj\Debug\DL.csproj.CopyComplete
 C:\CMSEncuestas.Net\CMSEncuestas\DL\obj\Debug\DL.dll
 C:\CMSEncuestas.Net\CMSEncuestas\DL\obj\Debug\DL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.AccessControl.dll
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Permissions.dll
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Principal.Windows.dll
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.AccessControl.xml
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Permissions.xml
+C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Principal.Windows.xml

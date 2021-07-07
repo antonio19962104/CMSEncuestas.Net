@@ -19,5 +19,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\jamurillo\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\jamurillo\.nuget\packages\entityframework\6.0.0</PkgEntityFramework>
   </PropertyGroup>
 </Project>

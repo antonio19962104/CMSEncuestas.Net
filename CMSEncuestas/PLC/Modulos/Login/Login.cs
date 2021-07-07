@@ -19,12 +19,13 @@ namespace PLC.Modulos.Login
                     return "404";
                 var workSpaces = BL.WorkSpace.GetWorkSpaceByIdAdmin((ML.Administrador)result.Object);
                 aAdministrador.cadenaToEncrypt = GetCadenaAdminToEncrypt(result.Object) + "|" + GetCadenaWorkSpaceToEncrypt(workSpaces);
-                aAdministrador._token = Encrypt._Encrypt.Encrypt(aAdministrador.cadenaToEncrypt, aAdministrador.Password);  
+                aAdministrador._token = Encrypt._Encrypt.Encrypt(aAdministrador.cadenaToEncrypt, aAdministrador.Password);
+                BL.Nlog.logAccess(BL.MappingConfigurations.MappingAdministrador((DL.Administrador)result.Object));
                 return aAdministrador._token;
             }
             catch (Exception aE)
             {
-                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace());
+                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace(true));
                 return "error";
             }
         }

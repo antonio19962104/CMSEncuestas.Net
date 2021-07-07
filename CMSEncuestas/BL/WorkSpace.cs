@@ -27,7 +27,7 @@ namespace BL
             }
             catch (Exception aE)
             {
-                BL.Nlog.logErrorModuloWorkSpace(aE, new StackTrace());
+                BL.Nlog.logErrorModuloWorkSpace(aE, new StackTrace(true));
                 return new List<ML.WorkSpace>();
             }
         }

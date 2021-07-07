@@ -5,4 +5,19 @@
 }
 <span>Usuario no registrado</span>
 <span>Intena de nuevo</span>
-@Html.Partial("~/views/Login/Login.cshtml")
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="form-horizontal">
+            <label class="control-label">Usuario</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="form-horizontal">
+            <label class="control-label">Contraseña</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="form-horizontal">
+            <input class="btn btn-danger" type="submit" value="Ingresar" />
+        </div>
+    </div>
+}

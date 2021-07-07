@@ -31,7 +31,7 @@ namespace BL
             }
             catch (Exception aE)
             {
-                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace());
+                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace(true));
                 result.Correct = false;
                 result.ExMessage = "exception";
             }

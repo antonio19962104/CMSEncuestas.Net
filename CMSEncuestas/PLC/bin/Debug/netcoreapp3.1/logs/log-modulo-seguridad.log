@@ -1,0 +1,21 @@
+2021-07-06 16:28:33.8053|ERROR|LogModuloSeguridad|Method: 
+2021-07-06 16:28:33.9462|ERROR|LogModuloSeguridad|Exception: System.TypeInitializationException: The type initializer for 'System.Data.Entity.Internal.AppConfig' threw an exception.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'. El sistema no puede encontrar el archivo especificado.
+File name: 'System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'
+   at System.Data.Entity.Internal.AppConfig..ctor()
+   at System.Data.Entity.Internal.AppConfig..cctor()
+
+
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.AppConfig.get_DefaultInstance()
+   at System.Data.Entity.Internal.LazyInternalConnection..ctor(String nameOrConnectionString)
+   at System.Data.Entity.DbContext..ctor(String nameOrConnectionString)
+   at DL.CmsEncuestasEntities..ctor() in C:\CMSEncuestas.Net\CMSEncuestas\DL\Model1.Context.cs:line 19
+   at BL.Administrador.Autenticar(Administrador aAdministrador) in C:\CMSEncuestas.Net\CMSEncuestas\BL\Administrador.cs:line 17
+2021-07-06 16:28:34.3720|ERROR|LogModuloSeguridad|Inner Exception: System.IO.FileNotFoundException: Could not load file or assembly 'System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'. El sistema no puede encontrar el archivo especificado.
+File name: 'System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'
+   at System.Data.Entity.Internal.AppConfig..ctor()
+   at System.Data.Entity.Internal.AppConfig..cctor()
+
+
+2021-07-06 16:28:44.2087|ERROR|LogModuloSeguridad|StackTrace: 

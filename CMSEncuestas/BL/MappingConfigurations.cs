@@ -26,7 +26,7 @@ namespace BL
             }
             catch (Exception aE)
             {
-                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace(true));
                 return new ML.Administrador();
             }
         }
@@ -44,7 +44,7 @@ namespace BL
             }
             catch (Exception aE)
             {
-                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace(true));
                 return new ML.WorkSpace();
             }
         }

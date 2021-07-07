@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+@{
+    var _token = "";//Context.Request.Query["_token"].ToString();
+}
+
+@{
+    if (_token.Equals("404"))
+        { Html.Partial("~/Views/Login/AdminNotFound.cshtml"); }
+    if (_token.Equals("exception") || _token.Equals("error"))
+        { Html.Partial("~/Views/Login/AdminNotFound.cshtml"); }
+    if (string.IsNullOrEmpty(_token))
+        { Html.Partial("~/Views/Login/SessionInvalida.cshtml"); }
+    else if (_token.Length > 20)
+        { Html.Partial("~/Views/Home/DashBoard.cshtml"); }
+}

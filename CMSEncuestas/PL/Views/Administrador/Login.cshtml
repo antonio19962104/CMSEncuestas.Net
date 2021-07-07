@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Administrador", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="form-horizontal">
+            <label class="control-label">Usuario</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="form-horizontal">
+            <label class="control-label">Contraseña</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="form-horizontal">
+            <input class="btn btn-danger" type="submit" value="Ingresar" />
+        </div>
+    </div>
+}
