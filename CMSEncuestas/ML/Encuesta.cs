@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class Encuesta
+    public class Encuesta : Result
     {
-        public int IdEncuesta { get; set; }
-        public string Nombre { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
-        public string Instrucciones { get; set; }
-        public string Agradecimiento { get; set; }
-        public ML.Estatus Estatus { get; set; }
-        public ML.Administrador Administrador { get; set; }
-        public ML.TipoEncuesta TipoEncuesta { get; set; }
+        public int IdEncuesta { get; set; } = 0;
+        public string Nombre { get; set; } = string.Empty;
+        public DateTime FechaInicio { get; set; } = DateTime.MinValue;
+        public DateTime FechaFin { get; set; } = DateTime.MinValue;
+        public string Instrucciones { get; set; } = string.Empty;
+        public string Agradecimiento { get; set; } = string.Empty;
+        public Estatus Estatus { get; set; } = new Estatus();
+        public Administrador Administrador { get; set; } = new Administrador();
+        public TipoEncuesta TipoEncuesta { get; set; } = new TipoEncuesta();
     }
 }

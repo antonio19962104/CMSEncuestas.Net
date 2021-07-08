@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 
 namespace BL
 {
+    /// <summary>
+    /// Contiene los métodos de creación de logs por módulos
+    /// </summary>
     public class Nlog
     {
         public static NLog.Logger nLogModuloSeguridad = NLog.LogManager.GetLogger("LogModuloSeguridad");
         public static NLog.Logger nLogModuloMappingConfigurations = NLog.LogManager.GetLogger("LogModuloMappingConfigurations");
         public static NLog.Logger nLogModuloWorkSpace = NLog.LogManager.GetLogger("LogModuloWorkSpace");
         public static NLog.Logger nLogAccess = NLog.LogManager.GetLogger("LogAccess");
+        public static NLog.Logger nlogData = NLog.LogManager.GetLogger("LogData");
 
         public static void logErrorModuloSeguridad(Exception aE, StackTrace aSt)
         {
@@ -40,6 +44,10 @@ namespace BL
             nLogAccess.Info("Usuario: " + aAdministrador.Username);
             nLogAccess.Info("Nombre: " + string.Concat(aAdministrador.Nombre, " ", aAdministrador.ApellidoPaterno + " ", aAdministrador.ApellidoMaterno));
             nLogAccess.Info("Token: " + aAdministrador._token);
+        }
+        public static void logData(string message)
+        {
+            nlogData.Info(message);
         }
     }
 }

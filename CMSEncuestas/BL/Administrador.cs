@@ -33,7 +33,8 @@ namespace BL
             {
                 BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace(true));
                 result.Correct = false;
-                result.ExMessage = "exception";
+                result.Exception = aE;
+                result.ExceptionMessage = aE.Message;
             }
             return result;
         }

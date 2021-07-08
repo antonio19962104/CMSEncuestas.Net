@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace ML
 {
+    /// <summary>
+    /// Modelo en el que envía el resultado de cada petición
+    /// </summary>
     public class Result
     {
-        public bool Correct { get; set; }
-        public string Data { get; set; }
-        public string ExMessage { get; set; }
-        public object Object { get; set; }
+        public bool Correct { get; set; } = false;
+        public Exception Exception { get; set; } = new Exception() { Source = "default" };
+        public string ExceptionMessage { get; set; } = string.Empty;
+        public object Object { get; set; } = new object();
+        public List<object> Objects { get; set; } = new List<object>();
     }
 }

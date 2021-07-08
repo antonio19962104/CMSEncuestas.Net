@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class BaseDeDatos
+    public class BaseDeDatos : Result
     {
-        public int IdBaseDeDatos { get; set; }
-        public ML.Estatus Estatus { get; set; }
-        public ML.Administrador Administrador { get; set; }
+        public int IdBaseDeDatos { get; set; } = 0;
+        public Estatus Estatus { get; set; } = new Estatus();
+        public Administrador Administrador { get; set; } = new Administrador();
     }
 }

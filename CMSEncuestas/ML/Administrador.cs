@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class Administrador
+    public class Administrador : Result
     {
-        public int IdAdministrador { get; set; }
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public ML.Estatus Estatus { get; set; }
-        public string cadenaToEncrypt { get; set; }
-        public string _token { get; set; }
+        public int IdAdministrador { get; set; } = 0;
+        public string Nombre { get; set; } = string.Empty;
+        public string ApellidoPaterno { get; set; } = string.Empty;
+        public string ApellidoMaterno { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public Estatus Estatus { get; set; } = new Estatus();
+        public string cadenaToEncrypt { get; set; } = string.Empty;
+        public string _token { get; set; } = string.Empty;
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class TipoControl
+    public class TipoControl : Result
     {
-        public int IdTipoControl { get; set; }
-        public string Nombre { get; set; }
+        public int IdTipoControl { get; set; } = 0;
+        public string Nombre { get; set; } = string.Empty;
     }
 }

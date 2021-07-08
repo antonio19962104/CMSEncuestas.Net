@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class Usuario_EstatusEncuesta
+    public class Usuario_EstatusEncuesta : Result
     {
-        public int IdUsuario_EstatusEncuesta { get; set; }
-        public ML.Usuario Usuario { get; set; }
-        public ML.Encuesta Encuesta { get; set; }
-        public ML.EstatusEncuesta EstatusEncuesta { get; set; }
+        public int IdUsuario_EstatusEncuesta { get; set; } = 0;
+        public Usuario Usuario { get; set; } = new Usuario();
+        public Encuesta Encuesta { get; set; } = new Encuesta();
+        public EstatusEncuesta EstatusEncuesta { get; set; } = new EstatusEncuesta();
     }
 }

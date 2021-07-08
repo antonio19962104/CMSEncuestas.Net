@@ -13,6 +13,11 @@ namespace PL.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="administrador"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Login(ML.Administrador administrador)
         {

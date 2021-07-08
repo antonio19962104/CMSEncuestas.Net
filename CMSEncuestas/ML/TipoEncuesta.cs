@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class TipoEncuesta
+    public class TipoEncuesta : Result
     {
-        public int IdTipoEncuesta { get; set; }
-        public string Nombre { get; set; }
+        public int IdTipoEncuesta { get; set; } = 0;
+        public string Nombre { get; set; } = string.Empty;
     }
 }

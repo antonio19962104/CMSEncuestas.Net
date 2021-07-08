@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class WorkSpace
+    public class WorkSpace : Result
     {
-        public int IdWorkSpace { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<int> IdEstatus { get; set; }
+        public int IdWorkSpace { get; set; } = 0;
+        public string Nombre { get; set; } = string.Empty;
+        public string Descripcion { get; set; } = string.Empty;
+        public Estatus Estatus { get; set; } = new Estatus();
     }
 }

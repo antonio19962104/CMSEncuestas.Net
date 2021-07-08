@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ML
 {
-    public class Estatus
+    public class Estatus : Result
     {
-        public int IdEstatus { get; set; }
-        public string Estatus1 { get; set; }
+        public int IdEstatus { get; set; } = 0;
+        public string Estatus1 { get; set; } = string.Empty;
     }
 }
