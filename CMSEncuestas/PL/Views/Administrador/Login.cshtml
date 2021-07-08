@@ -1,4 +1,4 @@
-﻿
+﻿@model ML.Administrador
 @{
     ViewBag.Title = "Login";
 }
@@ -16,13 +16,13 @@
     <div class="form-group">
         <div class="form-horizontal">
             <label class="control-label">Usuario</label>
-            <input class="form-control" type="text" />
+            @Html.TextBoxFor(o => o.Username, htmlAttributes: new { @class = "form-control" })
         </div>
         <div class="form-horizontal">
             <label class="control-label">Contraseña</label>
-            <input class="form-control" type="text" />
+            @Html.TextBoxFor(o => o.Password, htmlAttributes: new { @class = "form-control" })
         </div>
-        <div class="form-horizontal">
+        <div class="form-horizontal mt-2">
             <input class="btn btn-danger" type="submit" value="Ingresar" />
         </div>
     </div>

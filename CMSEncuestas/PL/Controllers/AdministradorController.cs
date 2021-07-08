@@ -11,7 +11,7 @@ namespace PL.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View(new ML.Administrador());
         }
         /// <summary>
         /// 

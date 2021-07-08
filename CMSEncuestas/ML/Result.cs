@@ -16,5 +16,6 @@ namespace ML
         public string ExceptionMessage { get; set; } = string.Empty;
         public object Object { get; set; } = new object();
         public List<object> Objects { get; set; } = new List<object>();
+        public bool Exists { get; set; } = false;
     }
 }
