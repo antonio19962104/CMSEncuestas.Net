@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BL</name>
+    </assembly>
+    <members>
+        <member name="T:BL.Generales">
+            <summary>
+            Contiene metodos que se usan de manera general en la solucion
+            </summary>
+        </member>
+        <member name="M:BL.Generales.GetEntity``1(System.Data.DataRow)">
+            <summary>
+            convierte un DataSet a entidades Entity Framework
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="row"></param>
+            <returns>objeto del del namespace DL</returns>
+        </member>
+        <member name="M:BL.Generales.print_r``1(System.Collections.Generic.List{``0},System.Diagnostics.StackTrace)">
+            <summary>
+            itera los valores de una lista de objetos e imprime los valores de las propiedades en un log
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="st"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL.Generales.print_r``1(System.Object,System.Diagnostics.StackTrace)">
+            <summary>
+            itera las propiedades de un objeto y las imprime en un log
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="st"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BL.Nlog">
+            <summary>
+            Contiene los métodos de creación de logs por módulos
+            </summary>
+        </member>
+    </members>
+</doc>

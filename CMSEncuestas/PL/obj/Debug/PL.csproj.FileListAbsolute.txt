@@ -203,3 +203,7 @@ C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\EntityFramework.SqlServer.xml
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\NLog.xml
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.pdb
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.dll.config
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\PL.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\ML.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.xml

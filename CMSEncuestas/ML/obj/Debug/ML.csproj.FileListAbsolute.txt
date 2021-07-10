@@ -10,3 +10,4 @@ C:\CMSEncuestas.Net\CMSEncuestas\ML\obj\Debug\ML.csproj.AssemblyReference.cache
 C:\CMSEncuestas.Net\CMSEncuestas\ML\obj\Debug\ML.csproj.CoreCompileInputs.cache
 C:\CMSEncuestas.Net\CMSEncuestas\ML\obj\Debug\ML.dll
 C:\CMSEncuestas.Net\CMSEncuestas\ML\obj\Debug\ML.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\ML\bin\Debug\ML.xml

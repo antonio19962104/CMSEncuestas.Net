@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PL</name>
+    </assembly>
+    <members>
+        <member name="M:PL.Controllers.AdministradorController.Login(ML.Administrador)">
+            <summary>
+            
+            </summary>
+            <param name="administrador"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

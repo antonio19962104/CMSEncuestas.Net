@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ML</name>
+    </assembly>
+    <members>
+        <member name="T:ML.Result">
+            <summary>
+            Modelo en el que envía el resultado de cada petición
+            </summary>
+        </member>
+    </members>
+</doc>

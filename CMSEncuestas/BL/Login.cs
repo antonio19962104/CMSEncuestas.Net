@@ -14,7 +14,7 @@ namespace PLC.Modulos.Login
             {
                 var result = BL.Administrador.Autenticar(aAdministrador);
                 if (!result.Correct)
-                    return result.ExMessage;
+                    return result.ExceptionMessage;
                 if (result.Object == null)
                     return "404";
                 var workSpaces = BL.WorkSpace.GetWorkSpaceByIdAdmin((ML.Administrador)result.Object);
