@@ -11,5 +11,22 @@
             <param name="administrador"></param>
             <returns></returns>
         </member>
+        <member name="T:PL.Controllers.DocumentacionController">
+            <summary>
+            Controlador de la documentación del proyecto
+            </summary>
+        </member>
+        <member name="M:PL.Controllers.DocumentacionController.Index">
+            <summary>
+            Vista de la documentación del proyecto
+            </summary>
+            <returns>Vista de la documentación del proyecto</returns>
+        </member>
+        <member name="M:PL.Controllers.DocumentacionController.GetDocumentacion">
+            <summary>
+            Obtiene un objeto con la documentacion del proyecto
+            </summary>
+            <returns>Objeto con la documentacion del proyecto</returns>
+        </member>
     </members>
 </doc>

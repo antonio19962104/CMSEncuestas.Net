@@ -4,6 +4,51 @@
         <name>BL</name>
     </assembly>
     <members>
+        <member name="T:BL.Documentacion">
+            <summary>
+            Documentación del proyecto
+            </summary>
+        </member>
+        <member name="M:BL.Documentacion.GetBussinessLayerDocumentation">
+            <summary>
+            Obtiene un objeto con la documentación de la capa de negocios
+            </summary>
+            <returns>Objeto con la documentacion de la capa de negocios</returns>
+        </member>
+        <member name="M:BL.Documentacion.GetDataLayerDocumentation">
+            <summary>
+            Obtiene un objeto con la documentación de la capa de datos
+            </summary>
+            <returns>Objeto con la documentacion de la capa de datos</returns>
+        </member>
+        <member name="M:BL.Documentacion.GetModelLayerDocumentation">
+            <summary>
+            Obtiene un objeto con la documentación de la capa de modelo
+            </summary>
+            <returns>Objeto con la documentacion de la capa de modelo</returns>
+        </member>
+        <member name="M:BL.Documentacion.GetPresentationLayerDocumentation">
+            <summary>
+            Obtiene un objeto con la documentación de la capa de presentación
+            </summary>
+            <returns>Objeto con la documentacion de la capa de presentación</returns>
+        </member>
+        <member name="M:BL.Documentacion.Deserialize``1(System.String)">
+            <summary>
+            Deserializa un xml a un objeto c#
+            </summary>
+            <typeparam name="T">Instancia del objeto especificado en la llamada al método</typeparam>
+            <param name="input">Cadena xml</param>
+            <returns>Objeto</returns>
+        </member>
+        <member name="M:BL.Documentacion.Serialize``1(``0)">
+            <summary>
+            Serializa un objeto c# a un xml
+            </summary>
+            <typeparam name="T">Instancia del objeto especificado en la llamada al método</typeparam>
+            <param name="ObjectToSerialize">Objeto c# a serializar</param>
+            <returns>XML del objeto</returns>
+        </member>
         <member name="T:BL.Generales">
             <summary>
             Contiene metodos que se usan de manera general en la solucion
