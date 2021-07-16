@@ -6,8 +6,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PLC.Modulos.Encrypt
+namespace BL
 {
+    /// <summary>
+    /// Clase de encriptación de cadenas
+    /// </summary>
     public static class _Encrypt
     {
         // This constant is used to determine the keysize of the encryption algorithm in bits.
@@ -17,6 +20,12 @@ namespace PLC.Modulos.Encrypt
         // This constant determines the number of iterations for the password bytes generation function.
         private const int DerivationIterations = 1000;
 
+        /// <summary>
+        /// Encrypta la cadena especificada
+        /// </summary>
+        /// <param name="plainText">Cadena a encriptar</param>
+        /// <param name="passPhrase">Pass de la cadena a encriptar</param>
+        /// <returns>Cadena encriptada</returns>
         public static string Encrypt(string plainText, string passPhrase)
         {
             // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
@@ -53,7 +62,12 @@ namespace PLC.Modulos.Encrypt
                 }
             }
         }
-
+        /// <summary>
+        /// Desencripta la cadena especificada
+        /// </summary>
+        /// <param name="cipherText">Cadena a desencriptar</param>
+        /// <param name="passPhrase">Pass de la cadena a desencriptar</param>
+        /// <returns>Cadena desencriptada</returns>
         public static string Decrypt(string cipherText, string passPhrase)
         {
             // Get the complete stream of bytes that represent:

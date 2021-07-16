@@ -82,6 +82,7 @@
     <Compile Include="MappingConfigurations.cs" />
     <Compile Include="Nlog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SenderEmail.cs" />
     <Compile Include="WorkSpace.cs" />
     <Compile Include="_Encrypt.cs" />
   </ItemGroup>

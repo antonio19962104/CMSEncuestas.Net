@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace BL
 {
+    /// <summary>
+    /// Clase del modulo del administrador
+    /// </summary>
     public class Administrador
     {
+        /// <summary>
+        /// Valida la existencia de un usuario administrador
+        /// </summary>
+        /// <param name="aAdministrador">Modelo con las claves de acceso del administrador</param>
+        /// <returns>Objeto administrador</returns>
         public static ML.Administrador Autenticar(ML.Administrador aAdministrador)
         {
             ML.Administrador result = new ML.Administrador();

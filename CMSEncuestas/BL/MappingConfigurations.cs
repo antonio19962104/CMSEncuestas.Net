@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace BL
 {
+    /// <summary>
+    /// Clase del modulo Mapping Configurations
+    /// </summary>
     public class MappingConfigurations
     {
+        /// <summary>
+        /// Mapea un objeto DL Administrador a un Objeto ML Administrador
+        /// </summary>
+        /// <param name="dlAdministrador">Objeto DL Administrador</param>
+        /// <returns>Objeto ML Administrador</returns>
         public static ML.Administrador MappingAdministrador(DL.Administrador dlAdministrador)
         {
             try
@@ -30,6 +38,11 @@ namespace BL
                 return new ML.Administrador();
             }
         }
+        /// <summary>
+        /// Mapea un objeto DL WorkSpace a un Objeto ML WorkSpace
+        /// </summary>
+        /// <param name="dlWorkSpace">Objeto DL Administrador</param>
+        /// <returns>Objeto ML WorkSpace</returns>
         public static ML.WorkSpace MappingWorkSpace(DL.WorkSpace dlWorkSpace)
         {
             try

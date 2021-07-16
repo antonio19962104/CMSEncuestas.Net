@@ -21,7 +21,7 @@ namespace PL.Controllers
         [HttpPost]
         public ActionResult Login(ML.Administrador administrador)
         {
-            var _token = BL.Administrador.Autenticar(administrador);
+            var _token = BL.Login.Autenticar(administrador, Modulo.Seguridad.Generales.GetIPAddress());
             return RedirectToAction("Home", "Home", new { _token = _token });
         }
     }

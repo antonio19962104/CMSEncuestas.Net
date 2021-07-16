@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuestas.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="SenderEmail.cs" />
     <Compile Include="TipoControl.cs" />
     <Compile Include="TipoEncuesta.cs" />
     <Compile Include="Usuario.cs" />

@@ -1,0 +1,13 @@
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.exe
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.deps.json
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.runtimeconfig.json
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.runtimeconfig.dev.json
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.dll
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\bin\Debug\netcoreapp3.1\InitFiles.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.csproj.AssemblyReference.cache
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.AssemblyInfoInputs.cache
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.AssemblyInfo.cs
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.csproj.CoreCompileInputs.cache
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.dll
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\InitFiles\obj\Debug\netcoreapp3.1\InitFiles.genruntimeconfig.cache
