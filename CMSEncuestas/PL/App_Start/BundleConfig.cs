@@ -15,7 +15,8 @@ namespace PL
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/customJS").Include(
-                        "~/Scripts/libs/AngularJS.js"));
+                        "~/Scripts/libs/AngularJS.js",
+                        "~/Scripts/CMSEncuestas/global.js"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará
             // para la producción, use la herramienta de compilación disponible en https://modernizr.com para seleccionar solo las pruebas que necesite.
