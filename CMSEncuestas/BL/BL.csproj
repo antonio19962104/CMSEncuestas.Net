@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.cs" />
+    <Compile Include="Documentacion.cs" />
     <Compile Include="Generales.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MappingConfigurations.cs" />

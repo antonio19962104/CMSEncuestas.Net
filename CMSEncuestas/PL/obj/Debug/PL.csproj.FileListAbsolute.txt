@@ -207,3 +207,22 @@ C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\PL.xml
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.xml
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\ML.xml
 C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\NLog.config
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\PL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\EntityFramework.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\EntityFramework.SqlServer.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\ML.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\NLog.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.pdb
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\BL.dll.config
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\ML.pdb
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\ML.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\EntityFramework.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\EntityFramework.SqlServer.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\NLog.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.pdb
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.dll.config

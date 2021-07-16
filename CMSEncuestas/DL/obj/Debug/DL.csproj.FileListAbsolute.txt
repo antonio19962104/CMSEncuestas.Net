@@ -24,3 +24,17 @@ C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.AccessControl.xml
 C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Permissions.xml
 C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Principal.Windows.xml
 C:\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\DL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\DL.dll.config
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\DL.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\EntityFramework.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.AccessControl.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Permissions.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Principal.Windows.dll
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\EntityFramework.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.AccessControl.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Permissions.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\bin\Debug\System.Security.Principal.Windows.xml
+C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\DL\obj\Debug\DL.csproj.CopyComplete
