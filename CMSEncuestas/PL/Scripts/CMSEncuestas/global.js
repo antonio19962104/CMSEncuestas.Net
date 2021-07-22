@@ -133,7 +133,7 @@ var getImageBase64 = function (e) {
  * return bool
  * valid type file load
 */
-vm.validaTipoArchivo = function () {
+var validaTipoArchivo = function () {
     try {
         var element = $('#fileChosse');
         if (!element[0].files[0].type.includes("png") && !element[0].files[0].type.includes("jpg") && !element[0].files[0].type.includes("jpeg")) {

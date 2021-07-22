@@ -28,5 +28,16 @@
             </summary>
             <returns>Objeto con la documentacion del proyecto</returns>
         </member>
+        <member name="T:PL.Modulo.Seguridad.Generales">
+            <summary>
+            Clase con metodos genrales del proyecto PL
+            </summary>
+        </member>
+        <member name="M:PL.Modulo.Seguridad.Generales.GetIPAddress">
+            <summary>
+            Obtiene la direccion IP del cliente
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

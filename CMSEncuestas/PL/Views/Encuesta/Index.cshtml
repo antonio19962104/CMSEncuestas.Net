@@ -1,0 +1,17 @@
+﻿@model ML.Encuesta
+@{
+    ViewBag.Title = "Index";
+}
+
+@{ 
+    foreach (ML.Encuesta encuesta in Model.Objects)
+    {
+        <div>
+            <h3>@encuesta.Nombre</h3>
+            <div class="alert-dark">
+                @encuesta.FechaFin - @encuesta.FechaFin
+            </div>
+            @encuesta.TipoEncuesta.Nombre
+        </div>
+    }
+}

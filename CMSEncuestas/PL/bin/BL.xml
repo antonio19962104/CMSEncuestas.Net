@@ -4,6 +4,18 @@
         <name>BL</name>
     </assembly>
     <members>
+        <member name="T:BL.Administrador">
+            <summary>
+            Clase del modulo del administrador
+            </summary>
+        </member>
+        <member name="M:BL.Administrador.Autenticar(ML.Administrador)">
+            <summary>
+            Valida la existencia de un usuario administrador
+            </summary>
+            <param name="aAdministrador">Modelo con las claves de acceso del administrador</param>
+            <returns>Objeto administrador</returns>
+        </member>
         <member name="T:BL.Documentacion">
             <summary>
             Documentación del proyecto
@@ -80,10 +92,147 @@
             <param name="st"></param>
             <returns></returns>
         </member>
+        <member name="T:BL.Login">
+            <summary>
+            Clase del Modulo de seguridad
+            </summary>
+        </member>
+        <member name="M:BL.Login.Autenticar(ML.Administrador,System.String)">
+            <summary>
+            Autentica un usuario administrador
+            </summary>
+            <param name="aAdministrador">Modelo con las claves de acceso del administrador</param>
+            <returns>Token del usuario admnistrador</returns>
+        </member>
+        <member name="M:BL.Login.GetCadenaAdminToEncrypt(System.Object)">
+            <summary>
+            Crea la porcion de la cadena a encriptar con los datos del administrador
+            </summary>
+            <param name="aAdministrador"></param>
+            <returns>Porcion de cadena a encriptar</returns>
+        </member>
+        <member name="M:BL.Login.GetCadenaWorkSpaceToEncrypt(System.Collections.Generic.List{ML.WorkSpace})">
+            <summary>
+            Crea la porcion de la cadena a encryptar con los datos de espacio de trabajo
+            </summary>
+            <param name="aWorkSpace"></param>
+            <returns>Porcion de cadena a encriptar</returns>
+        </member>
+        <member name="T:BL.MappingConfigurations">
+            <summary>
+            Clase del modulo Mapping Configurations
+            </summary>
+        </member>
+        <member name="M:BL.MappingConfigurations.MappingAdministrador(DL.Administrador)">
+            <summary>
+            Mapea un objeto DL Administrador a un Objeto ML Administrador
+            </summary>
+            <param name="dlAdministrador">Objeto DL Administrador</param>
+            <returns>Objeto ML Administrador</returns>
+        </member>
+        <member name="M:BL.MappingConfigurations.MappingWorkSpace(DL.WorkSpace)">
+            <summary>
+            Mapea un objeto DL WorkSpace a un Objeto ML WorkSpace
+            </summary>
+            <param name="dlWorkSpace">Objeto DL Administrador</param>
+            <returns>Objeto ML WorkSpace</returns>
+        </member>
         <member name="T:BL.Nlog">
             <summary>
             Contiene los métodos de creación de logs por módulos
             </summary>
+        </member>
+        <member name="F:BL.Nlog.nLogModuloSeguridad">
+            <summary>
+            Instancia de un log para el modulo de Seguridad
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nLogModuloMappingConfigurations">
+            <summary>
+            Instancia de un log para el modulo MappingConfigurations
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nLogModuloWorkSpace">
+            <summary>
+            Instancia de un log para el modulo WorkSpace
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nLogModuloSenderEmail">
+            <summary>
+            Instancia de un log para el modulo SenderEmail
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nLogAccess">
+            <summary>
+            Instancia de un log para el control de accesos al sitio
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nlogData">
+            <summary>
+            Instancia de un log para la impresion de datos
+            </summary>
+        </member>
+        <member name="M:BL.Nlog.logErrorModuloSeguridad(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo de Seguridad
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logErrorMappingConfigurations(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo MappingConfigurations
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logErrorModuloWorkSpace(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo WorkSpace
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logErrorModuloSenderEmail(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo SenderEmail
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logAccess(ML.Administrador,System.String)">
+            <summary>
+            Escritura de un log para el control de los accesos
+            </summary>
+            <param name="aAdministrador"></param>
+            <param name="IPAdress"></param>
+        </member>
+        <member name="M:BL.Nlog.logData(System.String)">
+            <summary>
+            Escritura de un log para imprimir datos
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:BL._Encrypt">
+            <summary>
+            Clase de encriptación de cadenas
+            </summary>
+        </member>
+        <member name="M:BL._Encrypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypta la cadena especificada
+            </summary>
+            <param name="plainText">Cadena a encriptar</param>
+            <param name="passPhrase">Pass de la cadena a encriptar</param>
+            <returns>Cadena encriptada</returns>
+        </member>
+        <member name="M:BL._Encrypt.Decrypt(System.String,System.String)">
+            <summary>
+            Desencripta la cadena especificada
+            </summary>
+            <param name="cipherText">Cadena a desencriptar</param>
+            <param name="passPhrase">Pass de la cadena a desencriptar</param>
+            <returns>Cadena desencriptada</returns>
         </member>
     </members>
 </doc>
