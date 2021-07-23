@@ -1,5 +1,5 @@
---jamurillo
---carteldesanta5.7
+--amurillo
+--Pass@word01
 create database CmsEncuestas;
 use CmsEncuestas;
 create table Estatus(

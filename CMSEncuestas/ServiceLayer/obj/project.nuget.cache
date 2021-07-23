@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2rhsQ1VaCZXjkUuLXYNeRGWoAlmLWBZZ29G3tfbau9uG+6XXfNwgl1LxKp06W3XU/RAB0tm27RgZwFWQX/f9nw==",
+  "dgSpecHash": "kdDBvV82BUVBKYEJVf3jHEqPvEBdExxVaPv1udn+xluuX1u99UIbjQ/wN0GjEh1yVBbiI1plbVuefiRqq91mZQ==",
   "success": true,
-  "projectFilePath": "C:\\CMSEncuestas.Net\\CMSEncuestas\\ServiceLayer\\ServiceLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Antonio Projects\\CMSEncuestas.Net\\CMSEncuestas\\ServiceLayer\\ServiceLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jose antonio\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }

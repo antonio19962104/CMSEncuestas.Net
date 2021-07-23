@@ -23,7 +23,7 @@ namespace BL
                 var result = BL.Administrador.Autenticar(aAdministrador);
                 if (!result.Correct)
                     return result.ExceptionMessage;
-                if (result.Object == null)
+                if (result.Exists == false)
                     return "404";
                 var workSpaces = BL.WorkSpace.GetWorkSpaceByIdAdmin((ML.Administrador)result.Object);
                 aAdministrador.cadenaToEncrypt = GetCadenaAdminToEncrypt(result.Object) + "|" + GetCadenaWorkSpaceToEncrypt(workSpaces);
