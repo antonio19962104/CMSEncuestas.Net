@@ -4,5 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.2" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.2" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="3.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="4.0.0" />
+    <PackageReference Include="Thinktecture.IdentityModel.Core" Version="1.4.0" />
+  </ItemGroup>
+
 
 </Project>
