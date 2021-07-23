@@ -9,6 +9,7 @@ namespace BL
 {
     public class WorkSpace
     {
+        public static MappingConfigurations Convert = new MappingConfigurations();
         public static List<ML.WorkSpace> GetWorkSpaceByIdAdmin(ML.Administrador aAdministrador)
         {
             try
@@ -21,7 +22,7 @@ namespace BL
                         return new List<ML.WorkSpace>();
                     var WorkSpace = context.WorkSpace.Where(o => o.IdWorkSpace == IdWorkSpace.IdWorkSpace && o.IdEstatus == 1).ToList();
                     foreach (var elem in WorkSpace)
-                        list.Add(BL.MappingConfigurations.MappingWorkSpace(elem));
+                        list.Add(Convert.ToModelWorkSpace(elem));
                     return list;
                 }
             }

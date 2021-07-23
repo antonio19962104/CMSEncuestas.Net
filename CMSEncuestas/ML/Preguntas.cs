@@ -13,5 +13,6 @@ namespace ML
         public Encuesta Encuesta { get; set; } = new Encuesta();
         public Estatus Estatus { get; set; } = new Estatus();
         public TipoControl TipoControl { get; set; } = new TipoControl();
+        public List<ML.Respuestas> Respuestas { get; set; }
     }
 }

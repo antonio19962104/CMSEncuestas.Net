@@ -17,5 +17,10 @@ namespace ML
         public object Object { get; set; } = new object();
         public List<object> Objects { get; set; } = new List<object>();
         public bool Exists { get; set; } = false;
+        public enum saveStatus
+        {
+            error = 0,
+            success = 1
+        }
     }
 }

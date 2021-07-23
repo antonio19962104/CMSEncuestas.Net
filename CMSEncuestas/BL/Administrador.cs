@@ -12,6 +12,7 @@ namespace BL
     /// </summary>
     public class Administrador
     {
+        public static MappingConfigurations Convert { get; set; } = new MappingConfigurations();
         /// <summary>
         /// Valida la existencia de un usuario administrador
         /// </summary>
@@ -34,7 +35,7 @@ namespace BL
                     {
                         result.Correct = true;
                         result.Exists = true;
-                        result.Object = BL.MappingConfigurations.MappingAdministrador(dlAdmin);
+                        result.Object = Convert.ToModelAdministrador(dlAdmin);
                     }
                 }
             }

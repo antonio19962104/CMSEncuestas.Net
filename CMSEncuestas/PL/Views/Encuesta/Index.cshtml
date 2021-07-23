@@ -12,6 +12,8 @@
                 @encuesta.FechaFin - @encuesta.FechaFin
             </div>
             @encuesta.TipoEncuesta.Nombre
+            @Html.ActionLink("Editar", "Edit", "Encuesta", new { IdEncuesta = encuesta.IdEncuesta }, htmlAttributes: new { @class = "btn btn-danger" })
         </div>
     }
+    @Html.ActionLink("Agregar", "Add", "Encuesta", htmlAttributes: new { @class = "btn btn-success" })
 }

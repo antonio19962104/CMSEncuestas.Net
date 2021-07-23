@@ -36,6 +36,14 @@ namespace BL
         /// Instancia de un log para la impresion de datos
         /// </summary>
         public static NLog.Logger nlogData = NLog.LogManager.GetLogger("LogData");
+        /// <summary>
+        /// Instancia de un log para el modulo de Encuesta
+        /// </summary>
+        public static NLog.Logger nlogModuloEncuesta = NLog.LogManager.GetLogger("LogModuloEncuesta");
+        /// <summary>
+        /// Instancia de un log para el modulo de Pregunta
+        /// </summary>
+        public static NLog.Logger nlogModuloPregunta = NLog.LogManager.GetLogger("logModuloPreguntas");
 
         /// <summary>
         /// Escritura de un log para el modulo de Seguridad
@@ -84,6 +92,30 @@ namespace BL
             nLogModuloSenderEmail.Error("Exception: " + aE);
             nLogModuloSenderEmail.Error("Inner Exception: " + aE.InnerException);
             nLogModuloSenderEmail.Error("StackTrace: ", aE.StackTrace);
+        }
+        /// <summary>
+        /// Escritura de un log para el modulo Encuesta
+        /// </summary>
+        /// <param name="aE"></param>
+        /// <param name="aSt"></param>
+        public static void logErrorModuloEncuesta(Exception aE, StackTrace aSt)
+        {
+            nlogModuloEncuesta.Error("Method: ", aSt.GetFrame(0).GetMethod().Name);
+            nlogModuloEncuesta.Error("Exception: " + aE);
+            nlogModuloEncuesta.Error("Inner Exception: " + aE.InnerException);
+            nlogModuloEncuesta.Error("StackTrace: ", aE.StackTrace);
+        }
+        /// <summary>
+        /// Escritura de un log para el modulo Preguntas
+        /// </summary>
+        /// <param name="aE"></param>
+        /// <param name="aSt"></param>
+        public static void logErrorModuloPreguntas(Exception aE, StackTrace aSt)
+        {
+            nlogModuloPregunta.Error("Method: ", aSt.GetFrame(0).GetMethod().Name);
+            nlogModuloPregunta.Error("Exception: " + aE);
+            nlogModuloPregunta.Error("Inner Exception: " + aE.InnerException);
+            nlogModuloPregunta.Error("StackTrace: ", aE.StackTrace);
         }
         /// <summary>
         /// Escritura de un log para el control de los accesos

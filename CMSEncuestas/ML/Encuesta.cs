@@ -17,5 +17,6 @@ namespace ML
         public Estatus Estatus { get; set; } = new Estatus();
         public Administrador Administrador { get; set; } = new Administrador();
         public TipoEncuesta TipoEncuesta { get; set; } = new TipoEncuesta();
+        public List<ML.Preguntas> Preguntas { get; set; } = new List<Preguntas>();
     }
 }

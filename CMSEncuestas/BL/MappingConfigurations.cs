@@ -17,7 +17,7 @@ namespace BL
         /// </summary>
         /// <param name="dlAdministrador">Objeto DL Administrador</param>
         /// <returns>Objeto ML Administrador</returns>
-        public static ML.Administrador MappingAdministrador(DL.Administrador dlAdministrador)
+        public ML.Administrador ToModelAdministrador(DL.Administrador dlAdministrador)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace BL
         /// </summary>
         /// <param name="dlWorkSpace">Objeto DL Administrador</param>
         /// <returns>Objeto ML WorkSpace</returns>
-        public static ML.WorkSpace MappingWorkSpace(DL.WorkSpace dlWorkSpace)
+        public ML.WorkSpace ToModelWorkSpace(DL.WorkSpace dlWorkSpace)
         {
             try
             {
@@ -59,6 +59,88 @@ namespace BL
             {
                 BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace(true));
                 return new ML.WorkSpace();
+            }
+        }
+        public ML.Encuesta ToModelEncuesta(DL.Encuesta dlEncuesta)
+        {
+            try
+            {
+                ML.Encuesta encuesta1 = new ML.Encuesta()
+                {
+                    IdEncuesta = dlEncuesta.IdEncuesta,
+                    Nombre = dlEncuesta.Nombre,
+                    FechaInicio = (DateTime)dlEncuesta.FechaInicio,
+                    FechaFin = (DateTime)dlEncuesta.FechaFin,
+                    Agradecimiento = dlEncuesta.Agradecimiento,
+                    Instrucciones = dlEncuesta.Instrucciones,
+                };
+                encuesta1.Administrador.IdAdministrador = (int)dlEncuesta.IdAdministrador;
+                encuesta1.Estatus.IdEstatus = (int)dlEncuesta.IdEstatus;
+                encuesta1.TipoEncuesta.IdTipoEncuesta = (int)dlEncuesta.IdTipoEncuesta;
+                return encuesta1;
+            }
+            catch (Exception aE)
+            {
+                BL.Nlog.logErrorModuloEncuesta(aE, new StackTrace());
+                return new ML.Encuesta();
+            }
+        }
+        public DL.Encuesta ToDLEncuesta(ML.Encuesta encuesta)
+        {
+            try
+            {
+                DL.Encuesta encuesta1 = new DL.Encuesta()
+                {
+                    Nombre = encuesta.Nombre,
+                    FechaInicio = encuesta.FechaInicio,
+                    FechaFin = encuesta.FechaFin,
+                    Agradecimiento = encuesta.Agradecimiento,
+                    IdAdministrador = encuesta.Administrador.IdAdministrador,
+                    IdEstatus = encuesta.Estatus.IdEstatus,
+                    IdTipoEncuesta = encuesta.TipoEncuesta.IdTipoEncuesta,
+                    Instrucciones = encuesta.Instrucciones,
+                };
+                return encuesta1;
+            }
+            catch (Exception aE)
+            {
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
+                return new DL.Encuesta();
+            }
+        }
+        public DL.Preguntas ToDLPregunta(ML.Preguntas preguntas)
+        {
+            try
+            {
+                DL.Preguntas preguntas1 = new DL.Preguntas()
+                {
+                    Pregunta = preguntas.Pregunta,
+                    IdTipoControl = preguntas.TipoControl.IdTipoControl,
+                    IdEstatus = preguntas.Estatus.IdEstatus,
+                };
+                return preguntas1;
+            }
+            catch (Exception aE)
+            {
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
+                return new DL.Preguntas();
+            }
+        }
+        public DL.Respuestas ToDLRespuesta(ML.Respuestas respuestas)
+        {
+            try
+            {
+                DL.Respuestas respuestas1 = new DL.Respuestas()
+                {
+                    Respuesta = respuestas.Respuesta,
+                    IdEstatus = respuestas.Estatus.IdEstatus,
+                };
+                return respuestas1;
+            }
+            catch (Exception aE)
+            {
+                BL.Nlog.logErrorMappingConfigurations(aE, new StackTrace());
+                return new DL.Respuestas();
             }
         }
     }

@@ -31,5 +31,15 @@ namespace PL.Modulo.Seguridad
             }
             return IPAddress;
         }
+        public static ML.Administrador ValidaToken(string _token, string passPhrase)
+        {
+            var data = BL._Encrypt.Decrypt(_token, passPhrase);
+            // idadmin|nombre|username|workspaes
+            var admin = new ML.Administrador();
+            admin.IdAdministrador = Convert.ToInt32(data.Substring('|')[0]);
+            admin.Nombre = Convert.ToString(data.Substring('|')[1]);
+            admin.Username = Convert.ToString(data.Substring('|')[2]);
+            return admin;
+        }
     }
 }
