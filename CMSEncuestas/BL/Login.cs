@@ -29,7 +29,7 @@ namespace BL
                 var workSpaces = BL.WorkSpace.GetWorkSpaceByIdAdmin((ML.Administrador)result.Object);
                 aAdministrador.cadenaToEncrypt = GetCadenaAdminToEncrypt(result.Object) + "|" + GetCadenaWorkSpaceToEncrypt(workSpaces);
                 aAdministrador._token = BL._Encrypt.Encrypt(aAdministrador.cadenaToEncrypt, SessionId);
-                BL.Nlog.logAccess(Convert.ToModelAdministrador((DL.Administrador)result.Object), IPAdress);
+                BL.Nlog.logAccess((ML.Administrador)result.Object, IPAdress);
                 return aAdministrador._token;
             }
             catch (Exception aE)

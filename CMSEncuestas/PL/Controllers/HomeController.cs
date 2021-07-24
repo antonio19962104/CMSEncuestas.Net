@@ -8,9 +8,9 @@ namespace PL.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Home()
+        public ActionResult Home(string _token)
         {
-            return View();
+            return View(new ML.Administrador() { _token = _token });
         }
     }
 }

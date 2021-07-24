@@ -226,3 +226,11 @@ C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\NLog.xml
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.pdb
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.xml
 C:\Antonio Projects\CMSEncuestas.Net\CMSEncuestas\PL\bin\DL.dll.config
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\Microsoft.Owin.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\Owin.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\System.Web.Cors.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\System.Web.Http.Owin.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\Microsoft.Owin.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\System.Web.Http.Owin.xml

@@ -97,7 +97,7 @@
             Clase del Modulo de seguridad
             </summary>
         </member>
-        <member name="M:BL.Login.Autenticar(ML.Administrador,System.String)">
+        <member name="M:BL.Login.Autenticar(ML.Administrador,System.String,System.String)">
             <summary>
             Autentica un usuario administrador
             </summary>
@@ -123,14 +123,14 @@
             Clase del modulo Mapping Configurations
             </summary>
         </member>
-        <member name="M:BL.MappingConfigurations.MappingAdministrador(DL.Administrador)">
+        <member name="M:BL.MappingConfigurations.ToModelAdministrador(DL.Administrador)">
             <summary>
             Mapea un objeto DL Administrador a un Objeto ML Administrador
             </summary>
             <param name="dlAdministrador">Objeto DL Administrador</param>
             <returns>Objeto ML Administrador</returns>
         </member>
-        <member name="M:BL.MappingConfigurations.MappingWorkSpace(DL.WorkSpace)">
+        <member name="M:BL.MappingConfigurations.ToModelWorkSpace(DL.WorkSpace)">
             <summary>
             Mapea un objeto DL WorkSpace a un Objeto ML WorkSpace
             </summary>
@@ -172,6 +172,16 @@
             Instancia de un log para la impresion de datos
             </summary>
         </member>
+        <member name="F:BL.Nlog.nlogModuloEncuesta">
+            <summary>
+            Instancia de un log para el modulo de Encuesta
+            </summary>
+        </member>
+        <member name="F:BL.Nlog.nlogModuloPregunta">
+            <summary>
+            Instancia de un log para el modulo de Pregunta
+            </summary>
+        </member>
         <member name="M:BL.Nlog.logErrorModuloSeguridad(System.Exception,System.Diagnostics.StackTrace)">
             <summary>
             Escritura de un log para el modulo de Seguridad
@@ -196,6 +206,20 @@
         <member name="M:BL.Nlog.logErrorModuloSenderEmail(System.Exception,System.Diagnostics.StackTrace)">
             <summary>
             Escritura de un log para el modulo SenderEmail
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logErrorModuloEncuesta(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo Encuesta
+            </summary>
+            <param name="aE"></param>
+            <param name="aSt"></param>
+        </member>
+        <member name="M:BL.Nlog.logErrorModuloPreguntas(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+            Escritura de un log para el modulo Preguntas
             </summary>
             <param name="aE"></param>
             <param name="aSt"></param>
