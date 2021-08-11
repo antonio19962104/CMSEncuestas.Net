@@ -258,5 +258,259 @@
             <param name="passPhrase">Pass de la cadena a desencriptar</param>
             <returns>Cadena desencriptada</returns>
         </member>
+        <member name="T:Decryptor">
+             <summary>
+             This class is used to decrypt strings using one of the 4 
+             symmetric algorithms - 3DES, DES, RC2 or Rijndael.
+             </summary>
+             <remarks>
+              When creating an
+             instance of this class, you must pass the algorithm to use in the 
+             constructor: see <see cref="T:EncryptionAlgorithm"/>.  Optionally, if the encrypted string ws hex formatted,
+             you can reformat the input string before decrypting.
+             
+             This class is based on principles from the Patterns and Practices guide: 
+             How To: Create an Encryption Library 
+             by J.D. Meier, Alex Mackman, Michael Dunner, and Srinath Vasireddy 
+             Microsoft Corporation
+            </remarks>
+        </member>
+        <member name="M:Decryptor.#ctor(EncryptionAlgorithm)">
+            <summary>
+            The constructor
+            </summary>
+            <param name="algId">The Algorithm to use</param>
+        </member>
+        <member name="M:Decryptor.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            Takes an encrypted string and returns an unencrypted
+            string, given the string to decrypt, the algorithm,
+             key and intial vector.
+            </summary>
+            <param name="StringToDecrypt">An encrypted string</param>
+            <param name="key">The key used in encryption</param>
+            <param name="IV">The Initial Vector used in encryption</param>
+            <returns></returns>
+        </member>
+        <member name="M:Decryptor.CreateByteArray(System.String)">
+            <summary>
+            Creates a byte array for decryption from the input string.
+            If the string has been formatted as hex, FormatAsHex should
+            set to be true and the string will be converted from hex
+            before creating the byte array. 
+            </summary>
+            <param name="StringToDecrypt">The encrypted string</param>
+            <returns>A byte array from the encrypted string</returns>
+        </member>
+        <member name="P:Decryptor.FormatAsHex">
+            <summary>
+            If true (default), input string will be treated as hex and decoded before decryption
+            </summary>
+        </member>
+        <member name="T:DecryptTransformer">
+            <summary>
+            Creates the proper Service Provider for the EncryptionAlgorithm
+            </summary>
+        </member>
+        <member name="M:DecryptTransformer.#ctor(EncryptionAlgorithm)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="deCryptId">The EncryptionAlgorithm</param>
+        </member>
+        <member name="M:DecryptTransformer.GetCryptoServiceProvider(System.Byte[])">
+            <summary>
+            Returns the proper Service Provider. Sets the key and IV of
+            the provider. If no key and IV were passed, a random key and/or
+            IV are created (not very useful for decryption!).
+            </summary>
+            <param name="bytesKey">A byte array of the key</param>
+            <returns>A CryptoServiceProvider for the EncryptionAlgorithm</returns>
+        </member>
+        <member name="P:DecryptTransformer.IV">
+            <summary>
+            The IV as an array of bytes
+            </summary>
+        </member>
+        <member name="T:Encryptor">
+            <summary>
+            The Encryptor class handles encryption of a string using one of the 4 
+            symmetric algorithms - 3DES, DES, RC2 or Rijndael. 
+            </summary>
+            <remarks>
+            When creating an
+            instance of this class, you must pass the algorithm to use in the 
+            constructor: see <see cref="T:EncryptionAlgorithm"/>. Optionally, you can set the output to be formatted as
+            hex through the FormatAsHex property.
+            
+            This class is based on principles from the Patterns and Practices guide: 
+            How To: Create an Encryption Library 
+            by J.D. Meier, Alex Mackman, Michael Dunner, and Srinath Vasireddy 
+            Microsoft Corporation</remarks>
+        </member>
+        <member name="M:Encryptor.#ctor(EncryptionAlgorithm)">
+            <summary>
+            Class constructor
+            </summary>
+            <param name="algId">The encryption algorithm to use</param>
+        </member>
+        <member name="M:Encryptor.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            Encrypts a string using the algorithm supplied in
+            the class constructor using the provided key and
+            initial vector.
+            </summary>
+            <remarks>Note that the length and composition of the key and IV
+            are algorithm dependent. For example, 3DES requires a 16 or 24 byte key,
+            whereas DES requires an 8 byte key. See <see cref="M:Encryptor.GetKey"/>
+            and <see cref="M:Encryptor.GetIV"/></remarks>
+            <param name="StringToEncrypt">The string to be encrypted</param>
+            <param name="key">The key to use for encryption. The same key will
+            be used for decryption.</param>
+            <param name="IV">THe Initial Vector to use. The same IV will be
+            used for decryption</param>
+            <returns>An encrypted string. If FormatAsHex has been set,
+            the string will be hex encoded.</returns>
+        </member>
+        <member name="M:Encryptor.CreateCipherString(System.Byte[])">
+            <summary>
+            Creates a string from the encrypted byte array. If
+            FormatAsHex is true, a hex formattted string will
+            be returned. Formatting as hex can make storage in a
+            database simpler as only legal characters will be output.
+            </summary>
+            <param name="BytesToConvert">The array of encrypted bytes</param>
+            <returns>The encrypted string.</returns>
+        </member>
+        <member name="M:Encryptor.GetKey">
+            <summary>
+            A new key which can be used for encryption.
+            </summary>
+            <remarks>This method allows the creation of valid keys
+            for the selcted algorithm. The format and length of a key
+            is dependent on the algorithm, so use this method to get
+            a valid key and then use this key in the Encrypt / Decrypt
+            methods.</remarks>
+            <returns>A new, valid, algorithm specific key as a string.</returns>
+        </member>
+        <member name="M:Encryptor.GetIV">
+            <summary>
+            A new Initial Vector to use for encryption
+            </summary>
+            <remarks>This method allows the creation of valid Initial
+            Vectors for the selcted algorithm. The format and length of an IV
+            is dependent on the algorithm, so use this method to get
+            a valid IV and then use this key in the Encrypt / Decrypt
+            methods.</remarks>
+            <returns>A new, valid, algorithm dependent IV as a string</returns>
+        </member>
+        <member name="P:Encryptor.IV">
+            <summary>
+            The current Initial Vector used in Encryption
+            </summary>
+        </member>
+        <member name="P:Encryptor.Key">
+            <summary>
+            The current Key being used in Encryption
+            </summary>
+        </member>
+        <member name="P:Encryptor.FormatAsHex">
+            <summary>
+            If true (default) output will be formatted as hex.
+            </summary>
+        </member>
+        <member name="T:EncryptionAlgorithm">
+            <summary>
+            The Encryption algorithm to use
+            </summary>
+        </member>
+        <member name="F:EncryptionAlgorithm.Des">
+            <summary>
+            Use <see cref="T:System.Security.Cryptography.DES"/> 
+            </summary>
+        </member>
+        <member name="F:EncryptionAlgorithm.Rc2">
+            <summary>
+            Use <see cref="T:System.Security.Cryptography.RC2"/>
+            </summary>
+        </member>
+        <member name="F:EncryptionAlgorithm.Rijndael">
+            <summary>
+            Use <see cref="F:EncryptionAlgorithm.Rijndael"/>
+            </summary>
+        </member>
+        <member name="F:EncryptionAlgorithm.TripleDes">
+            <summary>
+            Use <see cref="T:System.Security.Cryptography.TripleDES"/>
+            </summary>
+        </member>
+        <member name="T:EncryptTransformer">
+            <summary>
+            This class is used to return a Crypto Provider of the type
+            specified.
+            
+            </summary>
+            <remarks>
+            This class is based on the principles from Patterns and Practices guide: 
+            How To: Create an Encryption Library 
+            by J.D. Meier, Alex Mackman, Michael Dunner, and Srinath Vasireddy 
+            Microsoft Corporation
+            </remarks>
+        </member>
+        <member name="F:EncryptTransformer.algorithmID">
+            <summary>
+            The Algorithn to use
+            </summary>
+        </member>
+        <member name="F:EncryptTransformer.initVec">
+            <summary>
+            The Initial vector to use
+            </summary>
+        </member>
+        <member name="F:EncryptTransformer.encKey">
+            <summary>
+            The encryption key to use
+            </summary>
+        </member>
+        <member name="M:EncryptTransformer.#ctor(EncryptionAlgorithm)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="algId">The Algorithm to use</param>
+        </member>
+        <member name="M:EncryptTransformer.GetCryptoServiceProvider(System.Byte[])">
+            <summary>
+            Returns the proper Service Provider. Sets the key and IV of
+            the provider. If no key and/or IV were passed, a random key and/or
+            IV are created. They can then be retrieved from the <see cref="P:Encryptor.Key"/>
+            and <see cref="P:Encryptor.IV"/> properties. (Do not call <see cref="M:Encryptor.GetKey"/> 
+            or <see cref="M:Encryptor.GetIV"/> as
+            these create <i>new</i> keys).
+            </summary>
+            <param name="bytesKey"></param>
+            <returns></returns>
+        </member>
+        <member name="P:EncryptTransformer.IV">
+            <summary>
+             The IV as an array of bytes
+            </summary>
+        </member>
+        <member name="P:EncryptTransformer.Key">
+            <summary>
+            THe key as an array of bytes
+            </summary>
+        </member>
+        <member name="T:DVAModelsReflection.Security.Seguridad">
+            <summary>
+            Clase encargada de implementar la encriptacion dentro de los password de 
+            los usuarios de Autosyst XXI
+            </summary>
+        </member>
+        <member name="M:DVAModelsReflection.Security.Seguridad.EsPasswordValidoFailSafe(System.String,System.String)">
+            <summary> Si el password no está encriptado lo compara en texto plano </summary>
+        </member>
+        <member name="M:DVAModelsReflection.Security.Seguridad.EsPasswordValido(System.String,System.String)">
+            <summary> Si el password no está encriptado lanzará error </summary>
+        </member>
     </members>
 </doc>

@@ -84,6 +84,11 @@
     <Compile Include="Nlog.cs" />
     <Compile Include="Preguntas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Segu\Decryptor.cs" />
+    <Compile Include="Segu\DecryptTransformer.cs" />
+    <Compile Include="Segu\Encryptor.cs" />
+    <Compile Include="Segu\EncryptTransformer.cs" />
+    <Compile Include="Segu\Seguridad.cs" />
     <Compile Include="SenderEmail.cs" />
     <Compile Include="WorkSpace.cs" />
     <Compile Include="_Encrypt.cs" />

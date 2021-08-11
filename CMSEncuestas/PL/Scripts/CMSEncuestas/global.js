@@ -1,4 +1,7 @@
-﻿/*
+﻿const { arrow } = require("@popperjs/core");
+const { type } = require("jquery");
+
+/*
  * return array
  * remove item in array by value
  * implementetion array.remove('data');
@@ -27,15 +30,13 @@ var getIUD = function () {
  * hide loading div
 */
 var hideLoad = function () {
-    document.getElementsByClassName("busy")[0].classList.add("loadInvisible");
-    document.getElementsByClassName("busy")[0].classList.remove("loadVisible");
+    document.getElementById("loading").style.display = "none";
 }
 /*
  * show loading div
 */
 var showLoad = function () {
-    document.getElementsByClassName("busy")[0].classList.remove("loadInvisible");
-    document.getElementsByClassName("busy")[0].classList.add("loadVisible");
+    document.getElementById("loading").style.display = "block";
 }
 /**
  * return if data entry is null or empty
@@ -118,6 +119,7 @@ var getImageBase64 = function (e) {
                 reader.onloadend = function () {
                     return reader.result;
                 }
+                reader.readAsDataURL(file);
             }
         }
         else {
@@ -149,7 +151,7 @@ var validaTipoArchivo = function () {
 }
 /*
  * verify storage size
- * and drop if it's more of 4mb
+ * and drop if it's more than 4mb
 */
 var verificarStorage = function () {
     var _lsTotal = 0,
@@ -176,3 +178,19 @@ var verificarStorage = function () {
 var roundNumber = function (value) {
     return Math.round(value * 100) / 100;
 }
+/**
+ * return string replaced with specified params
+ * @param {any} value
+ * @param {any} arrayParams
+ */
+// if (!String.prototype.format) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/{(\d+)}/g, function (match, number) {
+            return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+                ;
+        });
+    };
+// }
