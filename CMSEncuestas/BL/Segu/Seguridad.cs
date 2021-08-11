@@ -4,7 +4,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Diagnostics;
 
-namespace DVAModelsReflection.Security
+namespace BL
 {
     /// <summary>
     /// Clase encargada de implementar la encriptacion dentro de los password de 

@@ -18,6 +18,8 @@ namespace PL
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BL.Seguridad seguridad = new BL.Seguridad();
+            var s = seguridad.EncriptarCadena("s");
         }
     }
 }

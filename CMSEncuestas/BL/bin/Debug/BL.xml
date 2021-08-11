@@ -237,6 +237,18 @@
             </summary>
             <param name="message"></param>
         </member>
+        <member name="T:BL.Seguridad">
+            <summary>
+            Clase encargada de implementar la encriptacion dentro de los password de 
+            los usuarios de Autosyst XXI
+            </summary>
+        </member>
+        <member name="M:BL.Seguridad.EsPasswordValidoFailSafe(System.String,System.String)">
+            <summary> Si el password no está encriptado lo compara en texto plano </summary>
+        </member>
+        <member name="M:BL.Seguridad.EsPasswordValido(System.String,System.String)">
+            <summary> Si el password no está encriptado lanzará error </summary>
+        </member>
         <member name="T:BL._Encrypt">
             <summary>
             Clase de encriptación de cadenas
@@ -499,18 +511,6 @@
             <summary>
             THe key as an array of bytes
             </summary>
-        </member>
-        <member name="T:DVAModelsReflection.Security.Seguridad">
-            <summary>
-            Clase encargada de implementar la encriptacion dentro de los password de 
-            los usuarios de Autosyst XXI
-            </summary>
-        </member>
-        <member name="M:DVAModelsReflection.Security.Seguridad.EsPasswordValidoFailSafe(System.String,System.String)">
-            <summary> Si el password no está encriptado lo compara en texto plano </summary>
-        </member>
-        <member name="M:DVAModelsReflection.Security.Seguridad.EsPasswordValido(System.String,System.String)">
-            <summary> Si el password no está encriptado lanzará error </summary>
         </member>
     </members>
 </doc>
