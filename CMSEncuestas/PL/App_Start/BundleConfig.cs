@@ -16,6 +16,12 @@ namespace PL
 
             bundles.Add(new ScriptBundle("~/bundles/customJS").Include(
                         "~/Scripts/libs/AngularJS.js",
+                        "~/Scripts/libs/html2canvas.js",
+                        "~/Scripts/libs/jspdf.min.js",
+                        "~/Scripts/libs/LinQ.js",
+                        "~/Scripts/libs/require.js",
+                        "~/Scripts/libs/summernote.min.js",
+                        "~/Scripts/libs/sweetalert2@11.min.js",
                         "~/Scripts/CMSEncuestas/global.js"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará

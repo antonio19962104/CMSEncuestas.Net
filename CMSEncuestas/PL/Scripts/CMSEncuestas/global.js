@@ -1,5 +1,5 @@
-﻿const { arrow } = require("@popperjs/core");
-const { type } = require("jquery");
+﻿////const { arrow } = require("@popperjs/core");
+////const { type } = require("jquery");
 
 /*
  * return array
