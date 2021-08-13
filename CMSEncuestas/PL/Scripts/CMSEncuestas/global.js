@@ -183,14 +183,50 @@ var roundNumber = function (value) {
  * @param {any} value
  * @param {any} arrayParams
  */
-// if (!String.prototype.format) {
-    String.prototype.format = function () {
-        var args = arguments;
-        return this.replace(/{(\d+)}/g, function (match, number) {
-            return typeof args[number] != 'undefined'
-                ? args[number]
-                : match
-                ;
-        });
-    };
-// }
+String.prototype.format = function () {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function (match, number) {
+        return typeof args[number] != 'undefined'
+            ? args[number]
+            : match
+            ;
+    });
+};
+/**
+ * add specified class by id element
+ * @param {any} elemId
+ * @param {any} className
+ */
+var addClassByElementId = function (elemId, className) {
+    document.getElementById(elemId).classList.add(className);
+}
+/**
+ * add specified class to all elems with elemClass parameter
+ * @param {any} elemClass
+ * @param {any} className
+ */
+var addClassByClassName = function (elemClass, className) {
+    var elements = document.getElementsByClassName(elemClass);
+    [].forEach.call(elements, function (elem) {
+        elem.classList.add(className);
+    });
+}
+/**
+ * remove specified class by id element
+ * @param {any} elemId
+ * @param {any} className
+ */
+var removeClassByElementId = function (elemId, className) {
+    document.getElementById(elemId).className.remove(className);
+}
+/**
+ * remove specified class to all elems with elemClass parameter
+ * @param {any} elemClass
+ * @param {any} className
+ */
+var removeClassByClassName = function (elemClass, className) {
+    var elements = document.getElementsByClassName(elemClass);
+    [].forEach.call(elements, function (elem) {
+        elem.classList.remove(className);
+    });
+}

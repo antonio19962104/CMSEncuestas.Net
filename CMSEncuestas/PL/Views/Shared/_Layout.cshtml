@@ -38,7 +38,20 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/customJS")
+    @Scripts.Render("~/bundles/customJS");
     @RenderSection("scripts", required: false)
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="scripts/myscript.js"></script>
+    }
+    else
+    {
+        <script src="dist/myscript.min.js"></script>
+    }
+    <script>
+        Modernizr.load({
+
+        });
+    </script>
 </body>
 </html>
