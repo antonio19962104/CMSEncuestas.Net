@@ -19,7 +19,7 @@ using System.Diagnostics;
 	/// How To: Create an Encryption Library 
 	/// by J.D. Meier, Alex Mackman, Michael Dunner, and Srinath Vasireddy 
 	/// Microsoft Corporation</remarks>
-	[DebuggerStepThrough] 
+	//[DebuggerStepThrough] 
 	internal class Encryptor
 	{
 		private EncryptTransformer transformer;

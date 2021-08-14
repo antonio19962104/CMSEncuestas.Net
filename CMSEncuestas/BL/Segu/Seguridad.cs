@@ -10,7 +10,7 @@ namespace BL
     /// Clase encargada de implementar la encriptacion dentro de los password de 
     /// los usuarios de Autosyst XXI
     /// </summary>
-	[DebuggerStepThrough] 
+	//[DebuggerStepThrough] 
     public class Seguridad
     {
         readonly String _llave;
