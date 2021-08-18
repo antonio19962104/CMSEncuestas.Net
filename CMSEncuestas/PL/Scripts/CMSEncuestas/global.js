@@ -1,6 +1,10 @@
-﻿////const { arrow } = require("@popperjs/core");
+﻿/* Author: José Antonio
+ * Version: 1.0
+ * Update: 18/08/2021
+ */
+////const { arrow } = require("@popperjs/core");
 ////const { type } = require("jquery");
-
+const docReporte = new jsPDF();
 /*
  * return array
  * remove item in array by value
@@ -55,13 +59,13 @@ var isNullOrEmpty = function (data) {
 var messageBoxError = function (data) {
     try {
         if (data.Correct) {
-            return false;// not exist error
+            return false;/* not exist error */
         }
         else {
             hideLoad();
             swal.fire("Ha ocurrido un error", data.ErrorMessage, "error");
             $("#header").append('<div class="col-8" style="margin-left:auto; margin-right:auto;"><div class="title-error" style="background-color: #efefef; height:30px; text-align:center"><span style="vertical-align:middle; font-weight:bold">Titulo</span></div><div class="body mt-2">Se ha producido un error el ejecutar la definicion del metodo GetDatFromBD</div></div>');
-            return data.Correct;// exist error
+            return data.Correct;/* exist error */
         }
     } catch (aE) {
         console.error(aE);
@@ -95,10 +99,16 @@ var getCurrentUrl = function () {
     return getBaseUrl() + "/" + window.location.href.split('/')[3] + "/" + window.location.href.split('/')[4];
 }
 /*
- * return url apis
+ * return url apis Encuesta
 */
-var getUrlApis = function () {
-    return getBaseUrl() + "/" + window.location.href.split('/')[3] + "/" + window.location.href.split('/')[4] + "/apisEncuesta/";
+var getUrlApisEncuesta = function () {
+    return getBaseUrl() + "/apisEncuesta/";
+}
+/*
+ * return url apis Base de Datos 
+*/
+var getUrlApisEncuesta = function () {
+    return getBaseUrl() + "/apisBD/";
 }
 /**
  * return base64 image
@@ -229,4 +239,16 @@ var removeClassByClassName = function (elemClass, className) {
     [].forEach.call(elements, function (elem) {
         elem.classList.remove(className);
     });
+}
+/**
+ * add page with specified div content to pdf
+ * @param {any} divId
+ */
+var addContentPDF = function (divId) {
+    var finalPaddingTop = 2;
+    docReporte.addPage();
+    docReporte.addHTML($('#' + divId)[0], 0, (finalPaddingTop / 2), { /* options */ },
+        function () {
+            /* then function */
+        });
 }
