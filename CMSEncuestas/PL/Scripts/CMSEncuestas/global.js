@@ -5,10 +5,19 @@
  * Description: Funciones globales del sitio
  */
 (function () {
-    const jquery = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/jquery-3.4.1");
-    const popper = require("@popperjs/core");
-    const html2canvas = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/html2canvas");
-    const linQ = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
+    /*
+     * Libraries
+     */
+    //const jquery = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/jquery-3.4.1");
+    //const popper = require("@popperjs/core");
+    //const html2canvas = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/html2canvas");
+    //const linQ = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
+    const linQ2 = import("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
+    
+    /*
+     * Instance of objects
+     */
+    var encuesta = localStorage.getItem("modelEncuesta");
 
     /*
      * instance of pdf document
@@ -271,28 +280,93 @@
     }
     /**
      * return filter array by nameFilter and valFilter specified
-     * @param {Array} this
+     * @param {Array} arr
      * @param {String} nameFilter
      * @param {String} valFilter
      */
-    var where = function (this, nameFilter, valFilter) {
-        return Enumerable.from(this).where(o => o.nameFilter == valFilter).toList();
+    var where = function (arr, nameFilter, valFilter) {
+        return Enumerable.from(arr).where(o => o.nameFilter == valFilter).toList();
     }
     /**
      * return if array contains valFilter in nameFilter specified
-     * @param {Array} this
+     * @param {Array} arr
      * @param {String} nameFilter
      * @param {String} valFilter
      */
-    var contains = function (this, nameFilter, valFilter) {
-        return Enumerable.from(this).contains(o => o.nameFilter == valFilter).toList();
+    var contains = function (arr, nameFilter, valFilter) {
+        return Enumerable.from(arr).contains(o => o.nameFilter == valFilter).toList();
     }
     /**
     * return array order by nameFilter specified asc
-    * @param {Array} this
-    * @param {String} nameFilter
+    * @param {Array} arr
+    * @param {String} nameOrder
     */
-    var orderBy = function (this, nameOrder) {
-        return Enumerable.from(this).orderBy(o => o.nameOrder).toList();
+    var orderBy = function (arr, nameOrder) {
+        return Enumerable.from(arr).orderBy(o => o.nameOrder).toList();
+    }
+    /**
+     * return response of get request by ajax
+     * @param {String} url
+     * @param {Array} paramsName
+     * @param {Array} paramsVal
+     */
+    var getRequest = function (url, paramsName, paramsVal) {
+        if (paramsName.length != paramsVal.length) {
+            swal.fire("El numero de parametros debe coincider con el numero de valores", "", "info").then(function () {
+                return false;
+            });
+            return false;
+        }
+        url = setParams(url, paramsName, paramsVal);
+        $.ajax({
+            url: url.substring(0, (url.length - 1)),
+            type: "GET",
+            success: function (response) {
+                return response;
+            },
+            error: function (err) {
+                return err;
+            }
+        });
+    }
+    /**
+     * return response of post request by ajax
+     * @param {String} url
+     * @param {Array} paramsName
+     * @param {Array} paramsVal
+     * @param {Object} object
+     */
+    var postRequest = function (url, paramsName, paramsVal, object) {
+        if (paramsName.length != paramsVal.length) {
+            swal.fire("El numero de parametros debe coincider con el numero de valores", "", "info").then(function () {
+                return false;
+            });
+            return false;
+        }
+        url = setParams(url, paramsName, paramsVal);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: object == null ? [] : object,
+            success: function (response) {
+                return response;
+            },
+            error: function (err) {
+                return err;
+            }
+        });
+    }
+    /**
+     * set params to url
+     * @param {String} url
+     * @param {Array} paramsName
+     * @param {Array} paramsVal
+     */
+    var setParams = function (url, paramsName, paramsVal) {
+        url += "/?";
+        [].forEach.call(paramsName, function (item, index) {
+            url += item + "=" + paramsVal[index] + "&";
+        });
+        return url.substring(0, (url.length - 1));
     }
 })();
