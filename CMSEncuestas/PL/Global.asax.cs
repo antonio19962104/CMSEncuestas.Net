@@ -19,6 +19,7 @@ namespace PL
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BL.Seguridad seguridad = new BL.Seguridad();
+            var r = PL.Controllers.HomeController.LoadJson("encuesta");
             var s = seguridad.EncriptarCadena("s");
         }
     }

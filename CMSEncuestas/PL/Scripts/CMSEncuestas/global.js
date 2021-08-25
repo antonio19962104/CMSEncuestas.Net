@@ -369,4 +369,11 @@
         });
         return url.substring(0, (url.length - 1));
     }
+    var traduccion = [];
+    var getTranslate = function (modulo) {
+        [].forEach.call(localStorage.getItem(modulo), function (item, index) {
+            traduccion.push({ id: item.id, es: item.spanish, us: item.english });
+        });
+        return traduccion;
+    }
 })();
