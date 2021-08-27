@@ -17,8 +17,9 @@
     /*
      * Instance of objects
      */
-    var encuesta = localStorage.getItem("modelEncuesta");
-
+    var modelEncuesta = JSON.parse(JSON.stringify(localStorage.getItem("modelEncuesta")));
+    var modelBaseDeDatos = JSON.parse(JSON.stringify(localStorage.getItem("modelBaseDeDatos")));
+    var modelResult = JSON.parse(JSON.stringify(localStorage.getItem("modelResult")));
     /*
      * instance of pdf document
      */
@@ -106,25 +107,25 @@
     }
     /*
      * return base url
-    */
+     */
     var getBaseUrl = function () {
         return window.location.href.split("/")[0] + "//" + window.location.href.split('/')[2];
     }
     /*
      * return current url
-    */
+     */
     var getCurrentUrl = function () {
         return getBaseUrl() + "/" + window.location.href.split('/')[3] + "/" + window.location.href.split('/')[4];
     }
     /*
      * return url apis Encuesta
-    */
+     */
     var getUrlApisEncuesta = function () {
         return getBaseUrl() + "/apisEncuesta/";
     }
     /*
      * return url apis Base de Datos 
-    */
+     */
     var getUrlApisEncuesta = function () {
         return getBaseUrl() + "/apisBD/";
     }
@@ -322,10 +323,16 @@
             url: url.substring(0, (url.length - 1)),
             type: "GET",
             success: function (response) {
-                return response;
+                modelResult.Correct = true;
+                modelResult.Object = response;
+                return modelResult;
             },
             error: function (err) {
-                return err;
+                modelResult.Correct = false;
+                modelResult.Exception = err;
+                modelResult.ExceptionMessage = err.responseText;
+                messageBoxError(modelResult);
+                return modelResult;
             }
         });
     }
@@ -352,6 +359,7 @@
                 return response;
             },
             error: function (err) {
+                messageBoxError(err);
                 return err;
             }
         });
@@ -369,11 +377,33 @@
         });
         return url.substring(0, (url.length - 1));
     }
-    var traduccion = [];
-    var getTranslate = function (modulo) {
-        [].forEach.call(localStorage.getItem(modulo), function (item, index) {
-            traduccion.push({ id: item.id, es: item.spanish, us: item.english });
+    /**
+     * get document of transates site
+     * @param {any} modulo
+     * @param {any} language
+     */
+    var getTranslate = function (modulo, language) {
+        var dictionary = getRequest("api/Localizacion", ["modulo", "language"], [modulo, language]);
+        [].forEach.call(dictionary, function (item, index) {
+            if (language == "es")
+                traduccion.push({ key: item.id, value: item.spanish });
+            if (language == "en")
+                traduccion.push({ key: item.id, value: item.english });
         });
         return traduccion;
     }
 })();
+
+/*
+var result;
+$.ajax({
+url: '/Home/GetTranstale/?modulo=encuesta',
+    type: 'GET',
+    success: function(res){
+    console.log(res);
+        result = res;
+    }
+});
+
+JSON.parse(JSON.stringify(result))
+ */

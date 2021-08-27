@@ -17,15 +17,15 @@ namespace PL.Controllers
         public JsonResult GetTranstale(string modulo)
         {
             ViewBag.Traduccion = LoadJson(modulo);
-            return Json(LoadJson(modulo));
+            return Json(LoadJson(modulo), JsonRequestBehavior.AllowGet);
         }
-        public static string LoadJson(string modulo)
+        public static List<Translate> LoadJson(string modulo)
         {
             using (StreamReader r = new StreamReader(@"\\10.5.2.101\\ClimaLaboral\\" + modulo + ".json"))
             {
-                string json = r.ReadToEnd();
-                //List<Translate> items = JsonConvert.DeserializeObject<List<Translate>>(json);
-                return json;
+                string jsonContent = r.ReadToEnd();
+                List<Translate> TranslateList = JsonConvert.DeserializeObject<List<Translate>>(jsonContent);
+                return TranslateList;
             }
         }
 
