@@ -10,9 +10,9 @@
     @Scripts.Render("~/bundles/modernizr")
 <script>
     var traduccion = [];
-    localStorage.setItem("modelEncuesta", @Html.Raw(JsonConvert.SerializeObject(new ML.Encuesta())));
-    localStorage.setItem("modelBaseDeDatos", @Html.Raw(JsonConvert.SerializeObject(new ML.BaseDeDatos())));
-    localStorage.setItem("modelResult", @Html.Raw(JsonConvert.SerializeObject(new ML.Result())));
+    var modelEncuesta = @Html.Raw(JsonConvert.SerializeObject(new ML.Encuesta()));
+    var modelBaseDeDatos = @Html.Raw(JsonConvert.SerializeObject(new ML.BaseDeDatos()));
+    var modelResult = @Html.Raw(JsonConvert.SerializeObject(new ML.Result()));
 </script>
 </head>
 <body>

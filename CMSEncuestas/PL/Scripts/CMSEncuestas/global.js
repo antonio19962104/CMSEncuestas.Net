@@ -17,9 +17,9 @@
     /*
      * Instance of objects
      */
-    var modelEncuesta = JSON.parse(JSON.stringify(localStorage.getItem("modelEncuesta")));
-    var modelBaseDeDatos = JSON.parse(JSON.stringify(localStorage.getItem("modelBaseDeDatos")));
-    var modelResult = JSON.parse(JSON.stringify(localStorage.getItem("modelResult")));
+    var mlEncuesta = JSON.parse(JSON.stringify(modelEncuesta));
+    var mlBaseDeDatos = JSON.parse(JSON.stringify(modelBaseDeDatos));
+    var mlResult = JSON.parse(JSON.stringify(modelResult));
     /*
      * instance of pdf document
      */
