@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strinct"
     angular.module("app", []).controller("encuestaController", encuestaController);
-
+	
     function encuestaController($http, $scope) {
 		try {
 			var vm = this;
@@ -11,7 +11,7 @@
 			 * @param {any} functionOK
 			 */
 			vm.get = function (url, functionOK) {
-				url = getUrlApis() + url;
+				url = getUrlApisEncuesta() + url;
 				$http.get(url, { headers: { 'Cache-Control': 'no-cache' } })
 					.then(function (response) {
 						try {
@@ -38,7 +38,7 @@
 			 * @param {any} functionOK
 			 */
 			vm.post = function (url, objeto, functionOK) {
-				url = getUrlApis() + url;
+				url = getUrlApisEncuesta() + url;
 				$http.post(url, objeto)
 					.then(function (response) {
 						try {
@@ -72,7 +72,63 @@
 				},
 				true);
 			}
-
+            vm.add = function () {
+				vm.post("Add", vm.Encuesta, function (response) {
+					switch (response.saveStatus) {
+						case 0:
+							swal.fire("No se ha podido crear la encuesta", "", "info").then(function () {
+								return;
+							});
+							break;
+						case 1:
+							swal.fire("La encuesta " + vm.Encuesta.Nombre + " ha sido creada correctamente", "", "success").then(function () {
+								vm.getAll();
+							});
+						default:
+					}
+				});
+            }
+            vm.getAll = function () {
+				vm.get("GetAll", function (response) {
+					vm.Encuestas = response.Objects;
+					vm.crearGrid(vm.Encuestas);
+				});
+            }
+            vm.edit = function () {
+				vm.post("Edit", vm.Encuesta, function (response) {
+					switch (response.saveStatus) {
+						case 0:
+							swal.fire("No se ha podido actualizar la encuesta", "", "info").then(function () {
+								return;
+							});
+							break;
+						case 1:
+							swal.fire("La encuesta " + vm.Encuesta.Nombre + " ha sido actualizada correctamente", "", "success").then(function () {
+								vm.getAll();
+							});
+                        default:
+                    }
+				});
+			}
+            vm.delete = function (id) {
+				vm.get("Delete/?Id=" + id, function (response) {
+                    switch (response.saveStatus) {
+						case 0:
+							swal.fire("No se ha podido eliminar la encuesta", "", "info").then(function () {
+								return;
+							});
+							break;
+						case 1:
+							swal.fire("La encuesta " + vm.Encuesta.Nombre + " ha sido eliminada correctamente", "", "success").then(function () {
+								vm.getAll();
+							});
+                        default:
+                    }
+				});
+			}
+            vm.crearGrid = function () {
+				/*kendo*/
+            }
 
 
 

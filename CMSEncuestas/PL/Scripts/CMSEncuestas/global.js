@@ -12,7 +12,7 @@
     //const popper = require("@popperjs/core");
     //const html2canvas = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/html2canvas");
     //const linQ = require("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
-    const linQ2 = import("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
+    //const linQ2 = import("/CMSEncuestas.Net/CMSEncuestas/PL/Scripts/libs/LinQ");
     
     /*
      * Instance of objects
@@ -323,9 +323,7 @@
             url: url.substring(0, (url.length - 1)),
             type: "GET",
             success: function (response) {
-                modelResult.Correct = true;
-                modelResult.Object = response;
-                return modelResult;
+                return response;
             },
             error: function (err) {
                 modelResult.Correct = false;

@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-@{ 
+@{
     foreach (ML.Encuesta encuesta in Model.Objects)
     {
         <div>
@@ -16,4 +16,13 @@
         </div>
     }
     @Html.ActionLink("Agregar", "Add", "Encuesta", htmlAttributes: new { @class = "btn btn-success" })
+
+    <div ng-repeat="item in Encuestas">
+        <h3>{{ item.Nombre }}</h3>
+        <div class="alert-dark">
+            {{ item.FechaFin }} - {{ item.FechaFin }}
+        </div>
+        {{ item.TipoEncuesta.Nombre }}
+    </div>
+
 }
