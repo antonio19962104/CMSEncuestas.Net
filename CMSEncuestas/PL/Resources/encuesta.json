@@ -1,0 +1,12 @@
+[
+	{
+		"id": "saludo",
+		"spanish": "hola",
+		"english": "hello",
+	},
+	{
+		"id": "despedida",
+		"spanish": "adios",
+		"english": "bye",
+	}
+]

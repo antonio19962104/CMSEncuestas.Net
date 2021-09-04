@@ -1,4 +1,6 @@
-﻿/* Author: José Antonio Murillo García
+﻿const { hide } = require("@popperjs/core");
+
+/* Author: José Antonio Murillo García
  * Email: j.antoniomg96@outlook.com
  * Version: 1.0
  * Update: 24/08/2021
@@ -135,9 +137,9 @@
      */
     var getImageBase64 = function (e) {
         try {
-            var element = $('#' + e.target.id);
-            if (element[0].files.length > 0) {
-                if (!validaTipoArchivo()) {
+            var element = document.getElementById(e.target.id);
+            if (element.files.length > 0) {
+                if (!validaTipoArchivo(element.files[0])) {
                     swal("Tipo de archivo no válido", "", "info").then(function () {
                         return "";
                     });
@@ -164,10 +166,9 @@
      * return bool
      * valid type file load
     */
-    var validaTipoArchivo = function () {
+    var validaTipoArchivo = function (file) {
         try {
-            var element = $('#fileChosse');
-            if (!element[0].files[0].type.includes("png") && !element[0].files[0].type.includes("jpg") && !element[0].files[0].type.includes("jpeg")) {
+            if (formatsImage.includes(file.type)) {
                 swal("Formato de archivo no admitido", "", "warning");
                 $("#nombreArchivo").html("<i class='fas fa-exclamation-triangle text-default' aria-hidden='true'></i> Selecciona un archivo válido");
                 return false;
@@ -178,6 +179,7 @@
         }
         return true;
     }
+    const formatsImage = ["png", "jpg", "jpeg"];
     /*
      * verify storage size
      * and drop if it's more than 4mb
@@ -272,11 +274,14 @@
      * @param {any} divId
      */
     var addContentPDF = function (divId) {
+        showLoad();
+        $("body", "html").scrollTop();
         var finalPaddingTop = 2;
         docReporte.addPage();
-        docReporte.addHTML($('#' + divId)[0], 0, (finalPaddingTop / 2), { /* options */ },
+        docReporte.addHTML(document.getElementById(divId), 0, (finalPaddingTop / 2), { /* options */ },
             function () {
                 /* then function */
+                hideLoad();
             });
     }
     /**
@@ -319,10 +324,12 @@
             return false;
         }
         url = setParams(url, paramsName, paramsVal);
+        showLoad();
         $.ajax({
             url: url.substring(0, (url.length - 1)),
             type: "GET",
             success: function (response) {
+                hideLoad();
                 return response;
             },
             error: function (err) {
@@ -330,6 +337,7 @@
                 modelResult.Exception = err;
                 modelResult.ExceptionMessage = err.responseText;
                 messageBoxError(modelResult);
+                hideLoad();
                 return modelResult;
             }
         });
@@ -349,15 +357,18 @@
             return false;
         }
         url = setParams(url, paramsName, paramsVal);
+        showLoad();
         $.ajax({
             url: url,
             type: "POST",
             data: object == null ? [] : object,
             success: function (response) {
+                hideLoad();
                 return response;
             },
             error: function (err) {
                 messageBoxError(err);
+                hideLoad();
                 return err;
             }
         });
@@ -381,8 +392,8 @@
      * @param {any} language
      */
     var getTranslate = function (modulo, language) {
-        var dictionary = getRequest("api/Localizacion", ["modulo", "language"], [modulo, language]);
-        [].forEach.call(dictionary, function (item, index) {
+        var dictionary = getRequest("Home/GetTranslate", ["modulo", "language"], [modulo, language]);
+        [].forEach.call(dictionary, function (item) {
             if (language == "es")
                 traduccion.push({ key: item.id, value: item.spanish });
             if (language == "en")
