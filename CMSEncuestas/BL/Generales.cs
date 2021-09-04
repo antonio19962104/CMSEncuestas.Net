@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,82 @@ namespace BL
                     Nlog.logData("Propiedad: " + property.Name + ". Valor: " + value);
             }
             return new T();
+        }
+        /// <summary>
+        /// Get base64 string for specified image
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>base64 string for specified image</returns>
+        public static string GetBase64FromFile(string path)
+        {
+            try
+            {
+                Byte[] bytes = File.ReadAllBytes(path);
+                String file = Convert.ToBase64String(bytes);
+                return file;
+            }
+            catch (Exception)
+            {
+                return ML.Constantes.UnavailableImage;
+            }
+        }
+        /// <summary>
+        /// Create file image in specified location
+        /// </summary>
+        /// <param name="cadenaBase64"></param>
+        /// <param name="IdProductoIntercambiable"></param>
+        /// <returns>string path image</returns>
+        public static string CrearImagenEnDirectorio(string cadenaBase64, int IdProductoIntercambiable)
+        {
+            try
+            {
+                string base64 = GetBase64ValidData(cadenaBase64);
+                string ext = GetBase64Extension(cadenaBase64);
+                var nombreImagen = "image_IdPCanjeable_" + IdProductoIntercambiable + "." + ext;
+                var ruta = @"\\10.5.2.101\Demos\ArchivosProgramaLealtad\media_productosCanjeables\";
+                if (!Directory.Exists(ruta))
+                    Directory.CreateDirectory(ruta);
+                if (System.IO.File.Exists(ruta + nombreImagen))
+                    System.IO.File.Delete(ruta + nombreImagen);
+                byte[] bytes = Convert.FromBase64String(base64);
+                System.IO.File.WriteAllBytes(ruta + nombreImagen, bytes);
+                return ruta + "\\" + nombreImagen;
+            }
+            catch (Exception aE)
+            {
+                return string.Empty;
+            }
+        }
+        /// <summary>
+        /// Construct valid base64 string
+        /// </summary>
+        /// <param name="cadena"></param>
+        /// <returns>Valid base 64 string</returns>
+        public static string GetBase64ValidData(string cadena)
+        {
+            if (cadena.Contains("jpg;"))
+                return cadena.Remove(0, 22);
+            if (cadena.Contains("jpeg;"))
+                return cadena.Remove(0, 23);
+            if (cadena.Contains("png;"))
+                return cadena.Remove(0, 22);
+            else
+                return cadena;
+        }
+        /// <summary>
+        /// Get extension of base64 image
+        /// </summary>
+        /// <param name="cadena"></param>
+        /// <returns>Extension of base64 image</returns>
+        public static string GetBase64Extension(string cadena)
+        {
+            if (cadena.Contains("jpg;"))
+                return "jpg";
+            if (cadena.Contains("jpeg;"))
+                return "jpeg";
+            if (cadena.Contains("png;"))
+                return "png";
+            return string.Empty;
         }
     }
 }
