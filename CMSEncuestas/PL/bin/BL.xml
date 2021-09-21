@@ -92,6 +92,35 @@
             <param name="st"></param>
             <returns></returns>
         </member>
+        <member name="M:BL.Generales.GetBase64FromFile(System.String)">
+            <summary>
+            Get base64 string for specified image
+            </summary>
+            <param name="path"></param>
+            <returns>base64 string for specified image</returns>
+        </member>
+        <member name="M:BL.Generales.CrearImagenEnDirectorio(System.String,System.Int32)">
+            <summary>
+            Create file image in specified location
+            </summary>
+            <param name="cadenaBase64"></param>
+            <param name="IdProductoIntercambiable"></param>
+            <returns>string path image</returns>
+        </member>
+        <member name="M:BL.Generales.GetBase64ValidData(System.String)">
+            <summary>
+            Construct valid base64 string
+            </summary>
+            <param name="cadena"></param>
+            <returns>Valid base 64 string</returns>
+        </member>
+        <member name="M:BL.Generales.GetBase64Extension(System.String)">
+            <summary>
+            Get extension of base64 image
+            </summary>
+            <param name="cadena"></param>
+            <returns>Extension of base64 image</returns>
+        </member>
         <member name="T:BL.Login">
             <summary>
             Clase del Modulo de seguridad

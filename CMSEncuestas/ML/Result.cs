@@ -9,8 +9,11 @@ namespace ML
     /// <summary>
     /// Modelo en el que envía el resultado de cada petición
     /// </summary>
-    public class Result
+    public class Result : Bitacora
     {
+        /// <summary>
+        /// Estatus de un metodo
+        /// </summary>
         public bool Correct { get; set; } = false;
         public Exception Exception { get; set; } = new Exception() { Source = "default" };
         public string ExceptionMessage { get; set; } = string.Empty;

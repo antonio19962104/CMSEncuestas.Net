@@ -12,6 +12,9 @@ namespace BL
     /// </summary>
     public class Administrador
     {
+        /// <summary>
+        /// Objeto de la clase MappingConfigurations
+        /// </summary>
         public static MappingConfigurations Convert { get; set; } = new MappingConfigurations();
         /// <summary>
         /// Valida la existencia de un usuario administrador
@@ -33,6 +36,20 @@ namespace BL
                     }
                     else
                     {
+                        if (ValidaCambioPass(dlAdmin))
+                        {
+                            result.Exists = true;
+                            result.Correct = false;
+                            result.ExceptionMessage = ML.Constantes.CambiaPassMessage;
+                            return result;
+                        }
+                        if (ValidaCuentaBloqueada(dlAdmin))
+                        {
+                            result.Exists = true;
+                            result.Correct = false;
+                            result.ExceptionMessage = ML.Constantes.CuentaBloqueadaMessage;
+                            return result;
+                        }
                         result.Correct = true;
                         result.Exists = true;
                         result.Object = Convert.ToModelAdministrador(dlAdmin);
@@ -42,6 +59,47 @@ namespace BL
             catch (Exception aE)
             {
                 BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace(true));
+                result.Correct = false;
+                result.Exception = aE;
+                result.ExceptionMessage = aE.Message;
+            }
+            return result;
+        }
+        /// <summary>
+        /// Valida si el password ha expirado
+        /// </summary>
+        /// <param name="administrador"></param>
+        /// <returns></returns>
+        public static bool ValidaCambioPass(DL.Administrador administrador)
+        {
+            administrador.FechaExpiracionPass = administrador.FechaHoraCreacion.AddDays(28);
+            if (administrador.FechaExpiracionPass >= DateTime.Now)
+                return true;
+            else
+                return false;
+        }
+        /// <summary>
+        /// Valida si la cuenta ha sido bloqueada
+        /// </summary>
+        /// <param name="administrador"></param>
+        /// <returns></returns>
+        public static bool ValidaCuentaBloqueada(DL.Administrador administrador)
+        {
+            if (administrador.LogFailed >= 10)
+                return true;
+            else
+                return false;
+        }
+        public static ML.Result Add(ML.Administrador administrador)
+        {
+            ML.Result result = new ML.Result();
+            try
+            {
+                //var dlAdministrador = Convert.ToDL
+            }
+            catch (Exception aE)
+            {
+                BL.Nlog.logErrorModuloSeguridad(aE, new StackTrace());
                 result.Correct = false;
                 result.Exception = aE;
                 result.ExceptionMessage = aE.Message;

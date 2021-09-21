@@ -4,6 +4,16 @@
         <name>ML</name>
     </assembly>
     <members>
+        <member name="T:ML.Constantes">
+            <summary>
+            Clase que contiene las constantes a usar globalmente en el sitio
+            </summary>
+        </member>
+        <member name="P:ML.Constantes.UnavailableImage">
+            <summary>
+            Base 64 de imagen no disponible
+            </summary>
+        </member>
         <member name="T:ML.Result">
             <summary>
             Modelo en el que envía el resultado de cada petición

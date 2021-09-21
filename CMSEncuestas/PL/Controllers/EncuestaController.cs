@@ -11,7 +11,9 @@ namespace PL.Controllers
         // GET: Encuesta
         public ActionResult Index(string _token)
         {
-            Modulo.Seguridad.Generales.ValidaToken(_token, Session.SessionID);
+            var token = Modulo.Seguridad.Generales.ValidaToken(_token, Session.SessionID);
+            if (!token.Correct)
+                return new JsonResult() { };
             return View(BL.Encuesta.GetAll());
         }
         public ActionResult Add()

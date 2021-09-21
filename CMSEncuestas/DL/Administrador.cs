@@ -37,5 +37,8 @@ namespace DL
         public virtual ICollection<BaseDeDatos> BaseDeDatos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Encuesta> Encuesta { get; set; }
+        public DateTime FechaExpiracionPass { get; set; }
+        public DateTime FechaHoraCreacion { get; set; }
+        public int LogFailed { get; set; }
     }
 }

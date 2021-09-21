@@ -22,6 +22,12 @@
             </summary>
             <returns>Vista de la documentación del proyecto</returns>
         </member>
+        <member name="M:PL.Controllers.DocumentacionController.docs">
+            <summary>
+            Vista de documentacion del proyecto
+            </summary>
+            <returns>Vista de documentacion</returns>
+        </member>
         <member name="M:PL.Controllers.DocumentacionController.GetDocumentacion">
             <summary>
             Obtiene un objeto con la documentacion del proyecto
