@@ -85,6 +85,11 @@ namespace BL
                 return new ML.Encuesta();
             }
         }
+        /// <summary>
+        /// Mapea un objeto ML Encuesta a un Objeto DL Encuesta
+        /// </summary>
+        /// <param name="encuesta"></param>
+        /// <returns></returns>
         public DL.Encuesta ToDLEncuesta(ML.Encuesta encuesta)
         {
             try

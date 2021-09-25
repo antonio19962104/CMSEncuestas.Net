@@ -9,12 +9,31 @@
             Clase del modulo del administrador
             </summary>
         </member>
+        <member name="P:BL.Administrador.Convert">
+            <summary>
+            Objeto de la clase MappingConfigurations
+            </summary>
+        </member>
         <member name="M:BL.Administrador.Autenticar(ML.Administrador)">
             <summary>
             Valida la existencia de un usuario administrador
             </summary>
             <param name="aAdministrador">Modelo con las claves de acceso del administrador</param>
             <returns>Objeto administrador</returns>
+        </member>
+        <member name="M:BL.Administrador.ValidaCambioPass(DL.Administrador)">
+            <summary>
+            Valida si el password ha expirado
+            </summary>
+            <param name="administrador"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL.Administrador.ValidaCuentaBloqueada(DL.Administrador)">
+            <summary>
+            Valida si la cuenta ha sido bloqueada
+            </summary>
+            <param name="administrador"></param>
+            <returns></returns>
         </member>
         <member name="T:BL.Documentacion">
             <summary>
@@ -165,6 +184,13 @@
             </summary>
             <param name="dlWorkSpace">Objeto DL Administrador</param>
             <returns>Objeto ML WorkSpace</returns>
+        </member>
+        <member name="M:BL.MappingConfigurations.ToDLEncuesta(ML.Encuesta)">
+            <summary>
+            Mapea un objeto ML Encuesta a un Objeto DL Encuesta
+            </summary>
+            <param name="encuesta"></param>
+            <returns></returns>
         </member>
         <member name="T:BL.Nlog">
             <summary>

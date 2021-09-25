@@ -232,3 +232,6 @@ C:\CMSEncuestas.Net\CMSEncuestas\PL\obj\Debug\PL.csproj.CoreCompileInputs.cache
 C:\CMSEncuestas.Net\CMSEncuestas\PL\obj\Debug\PL.csproj.CopyComplete
 C:\CMSEncuestas.Net\CMSEncuestas\PL\obj\Debug\PL.dll
 C:\CMSEncuestas.Net\CMSEncuestas\PL\obj\Debug\PL.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\HtmlAgilityPack.dll
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\HtmlAgilityPack.pdb
+C:\CMSEncuestas.Net\CMSEncuestas\PL\bin\HtmlAgilityPack.xml
